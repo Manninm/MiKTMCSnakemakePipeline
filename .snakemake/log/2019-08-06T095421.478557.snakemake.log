@@ -1,0 +1,3 @@
+NameError in line 47 of /home/manninm/pyflow-RNAseq/Snakefile:
+name 'STAR_INDEX' is not defined
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 47, in <module>

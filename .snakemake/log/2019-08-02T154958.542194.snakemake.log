@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	9	HTSeq_fq
+	9	STAR_fq
+	1	all
+	19
+
+[Fri Aug  2 15:49:58 2019]
+Job 4: aligning /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R1.fq.gz /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R2.fq.gz using STAR: 1 threads
+
+[Fri Aug  2 15:56:48 2019]
+Error in rule STAR_fq:
+    jobid: 4
+    output: Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam
+
+RuleException:
+CalledProcessError in line 52 of /home/manninm/pyflow-RNAseq/Snakefile:
+Command 'set -eo pipefail; echo BEGIN at $(date);  STAR --twopassMode Basic 		--runThreadN 1 		--genomeDir /home/deepSeq/STAR_index_GRCh38_ENSEMBL     --outSAMtype BAM SortedByCoordinate 		--readFilesIn /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R1.fq.gz /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R2.fq.gz     --outBAMcompression 10
+    --outSAMstrandField intronMotif     --outBAMsortingThreadN 1     --bamRemoveDuplicatesType UniqueIdentical
+    --readFilesCommand gunzip -c     --readFilesIn /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R1.fq.gz /home/manninm/pyflow-RNAseq/Sample_70166/Sample_70166.R2.fq.gz     --outFileNamePrefix Sample_70166/Sample_70166 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 104.
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 52, in __rule_STAR_fq
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-02T154958.542194.snakemake.log

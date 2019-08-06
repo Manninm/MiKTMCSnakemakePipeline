@@ -1,0 +1,9 @@
+KeyboardInterrupt in line 31 of /home/manninm/pyflow-RNAseq/Snakefile.
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 31, in <module>
+  File "/usr/lib64/python3.6/site-packages/yaml/__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 764, in get_code
+  File "<frozen importlib._bootstrap_external>", line 833, in get_data

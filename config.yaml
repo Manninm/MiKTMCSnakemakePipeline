@@ -1,18 +1,19 @@
 
 ## the index folder for STAR, change to mm9 if it is mouse
-STARINDEX: "/scratch/genomic_med/apps/annot/starbase/hg19/starindex"
+STARINDEX: "/home/deepSeq/STAR_index_HS_38.86_small/"
 
-## gtf file for annotation
+## gtf file for annotation and number of threads used for sorting
 
-MYGTF: "/scratch/genomic_med/apps/annot/starbase/hg19/annot/gencode.v19.annotation.hs37d5_chr.gtf"
+MYGTF: "/home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf"
 
+SortThreads: "9"
 
 ## start from bam or start from fastq
 from_fastq: True
 
 ## use which program to count 
-htseq: False
-featureCount : True
+htseq: True
+featureCount : False
 
 # Path to a JSON file with samples and their corresponding FASTQ files.
 SAMPLES_JSON: './samples.json'

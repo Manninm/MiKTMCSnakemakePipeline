@@ -15,7 +15,7 @@ def fastq_json(fastq_dir):
             if file.endswith("fq.gz"):
                 full_path = join(root, file)
                 #R1 will be forward reads, R2 will be reverse reads
-                m = re.search(r"(.+).(R[12]).fq.gz", file)
+                m = re.search(r"(+)(R[12])fq.gz", file)
                 if m:
                     sample = m.group(1)
                     reads = m.group(2)  

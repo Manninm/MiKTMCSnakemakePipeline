@@ -1,0 +1,39 @@
+Building DAG of jobs...
+MissingInputException in line 57 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+02sortBam_fq/Sample_70170.sorted.bam
+05bigwig_fq/Sample_70169.bw
+02sortBam_fq/Sample_70161.sorted.bam
+01bam_fq/Sample_70166Aligned.out.bam
+02sortBam_fq/Sample_70169.sorted.bam
+02sortBam_fq/Sample_70171.sorted.bam
+02sortBam_fq/Sample_70169.sorted.bam.bai
+02sortBam_fq/Sample_70168.sorted.bam.bai
+05bigwig_fq/Sample_70161.bw
+02sortBam_fq/Sample_70160.sorted.bam.bai
+02sortBam_fq/Sample_70167.sorted.bam
+02sortBam_fq/Sample_70161.sorted.bam.bai
+02sortBam_fq/Sample_70162.sorted.bam
+02sortBam_fq/Sample_70171.sorted.bam.bai
+01bam_fq/Sample_70160Aligned.out.bam
+01bam_fq/Sample_70168Aligned.out.bam
+01bam_fq/Sample_70167Aligned.out.bam
+02sortBam_fq/Sample_70166.sorted.bam.bai
+05bigwig_fq/Sample_70162.bw
+02sortBam_fq/Sample_70170.sorted.bam.bai
+01bam_fq/Sample_70170Aligned.out.bam
+02sortBam_fq/Sample_70160.sorted.bam
+05bigwig_fq/Sample_70170.bw
+02sortBam_fq/Sample_70162.sorted.bam.bai
+05bigwig_fq/Sample_70168.bw
+02sortBam_fq/Sample_70167.sorted.bam.bai
+05bigwig_fq/Sample_70160.bw
+05bigwig_fq/Sample_70166.bw
+02sortBam_fq/Sample_70166.sorted.bam
+01bam_fq/Sample_70162Aligned.out.bam
+02sortBam_fq/Sample_70168.sorted.bam
+01bam_fq/Sample_70161Aligned.out.bam
+01bam_fq/Sample_70169Aligned.out.bam
+05bigwig_fq/Sample_70171.bw
+05bigwig_fq/Sample_70167.bw
+01bam_fq/Sample_70171Aligned.out.bam

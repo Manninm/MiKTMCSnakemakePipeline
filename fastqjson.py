@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import json
 import os
@@ -12,10 +14,10 @@ def fastq_json(fastq_dir):
 ## build the dictionary with full path for each fastq.gz file
     for root, dirs, files in os.walk(args):
         for file in files:
-            if file.endswith("fq.gz"):
+            if file.endswith("fastq.gz"):
                 full_path = join(root, file)
                 #R1 will be forward reads, R2 will be reverse reads
-                m = re.search(r"(.+).(R[12]).fq.gz", file)
+                m = re.search(r"(.+)_(R[12])_[0-9]{3,4}.fastq.gz", file)
                 if m:
                     sample = m.group(1)
                     reads = m.group(2)  

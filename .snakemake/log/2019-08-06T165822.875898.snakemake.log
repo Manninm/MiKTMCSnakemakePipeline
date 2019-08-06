@@ -1,0 +1,12 @@
+error in line 24 of /home/manninm/pyflow-RNAseq/Snakefile:
+nothing to repeat at position 1
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 24, in <module>
+  File "/home/manninm/pyflow-RNAseq/fastq2json.py", line 18, in fastq_json
+  File "/usr/lib64/python3.6/re.py", line 182, in search
+  File "/usr/lib64/python3.6/re.py", line 301, in _compile
+  File "/usr/lib64/python3.6/sre_compile.py", line 562, in compile
+  File "/usr/lib64/python3.6/sre_parse.py", line 855, in parse
+  File "/usr/lib64/python3.6/sre_parse.py", line 416, in _parse_sub
+  File "/usr/lib64/python3.6/sre_parse.py", line 765, in _parse
+  File "/usr/lib64/python3.6/sre_parse.py", line 416, in _parse_sub
+  File "/usr/lib64/python3.6/sre_parse.py", line 616, in _parse
