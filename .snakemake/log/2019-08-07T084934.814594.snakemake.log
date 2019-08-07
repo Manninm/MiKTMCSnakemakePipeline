@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	3	HTSeq_fq
+	3	STAR_fq
+	1	all
+	7
+
+[Wed Aug  7 08:49:35 2019]
+Job 2: aligning Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz /home/deepSeq/STAR_index_HS_38.86_small/ using STAR: 22 threads
+
+[Wed Aug  7 08:56:23 2019]
+Finished job 2.
+1 of 7 steps (14%) done
+
+[Wed Aug  7 08:56:23 2019]
+Job 5: htseq-count Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam : 1 threads
+
+[Wed Aug  7 08:56:23 2019]
+Error in rule HTSeq_fq:
+    jobid: 5
+    output: Sample_70161/Sample_70161_htseq.cnt
+    log: 00log/Sample_70161_htseq_count.log
+
+RuleException:
+CalledProcessError in line 97 of /home/manninm/pyflow-RNAseq/Snakefile:
+Command 'set -eo pipefail; echo BEGIN at $(date);  source activate root
+		htseq-count -m intersection-nonempty --stranded=no --idattr gene_id -r name -f bam Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf > Sample_70161/Sample_70161_htseq.cnt 2> 00log/Sample_70161_htseq_count.log ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 97, in __rule_HTSeq_fq
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-07T084934.814594.snakemake.log

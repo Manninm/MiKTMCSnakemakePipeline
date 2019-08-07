@@ -1,0 +1,6 @@
+./Sample_70161/Sample_70161Log.final.out
+                          Number of input reads |	2474012
+./Sample_70162/Sample_70162Log.final.out
+                          Number of input reads |	2295972
+./Sample_70160/Sample_70160Log.final.out
+                          Number of input reads |	1864134

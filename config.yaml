@@ -6,7 +6,7 @@ STARINDEX: "/home/deepSeq/STAR_index_HS_38.86_small/"
 
 MYGTF: "/home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf"
 
-SortThreads: "9"
+SortThreads: "4"
 
 ## start from bam or start from fastq
 from_fastq: True
