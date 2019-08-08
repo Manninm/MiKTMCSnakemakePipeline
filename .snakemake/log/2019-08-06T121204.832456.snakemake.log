@@ -1,6 +1,0 @@
-SystemExit in line 15 of /home/manninm/pyflow-RNAseq/Snakefile:
-2
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 15, in <module>
-  File "/usr/lib64/python3.6/argparse.py", line 1733, in parse_args
-  File "/usr/lib64/python3.6/argparse.py", line 2389, in error
-  File "/usr/lib64/python3.6/argparse.py", line 2376, in exit

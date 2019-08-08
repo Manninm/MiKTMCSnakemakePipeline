@@ -1,3 +1,0 @@
-NameError in line 27 of /home/manninm/pyflow-RNAseq/Snakefile:
-name 'fastq_dir' is not defined
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 27, in <module>

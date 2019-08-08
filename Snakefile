@@ -6,16 +6,16 @@ import argparse
 from collections import defaultdict
 import fastq2json
 from itertools import chain, combinations
-import re
+import shutil
+from shutil import copyfile
 #Testing for sequence file extension
 directory = "."
 MainDir = os.path.abspath(directory) + "/"
-EXT = defaultdict(lambda: defaultdict(list))
 ## build the dictionary with full path for each for sequence files
 fastq=glob.glob(MainDir+'*/*'+'R[12]'+'**fastq.gz')
 if len(fastq) > 0 :
     print('Sequence file extensions have fastq')
-    os.system('/Move.sh')
+    os.system('scripts/Move.sh')
     fastq2json.fastq_json(MainDir)
 else:
     print('File extensions  are good')
@@ -71,8 +71,14 @@ rule all:
         'input.txt',
         'mappedPercent.txt',
         'percentMultimappers.txt',
-        'unmappedTooShort.txt'
-
+        'unmappedTooShort.txt',
+		    "QcImages/adapter_content_pngs.pdf",
+		    "QcImages/duplication_levels_pngs.pdf",
+		    "QcImages/kmer_profiles_pngs.pdf",
+		    "QcImages/per_base_quality_pngs.pdf",
+		    "QcImages/per_base_sequence_content_pngs.pdf",
+		    "QcImages/per_sequence_gc_content_pngs.pdf",	
+		    'Screen/screen_pngs.pdf',
 #rule HTSeq_fq:
 #	input: "{sample}/{sample}Aligned.sortedByCoord.out.bam"
 #	output: "{sample}/{sample}_htseq.cnt"
@@ -90,4 +96,4 @@ rule all:
 #Load rules for modularity
 
 include: "rules/Star_Map.smk"
- 
+include: "rules/Fast.smk"

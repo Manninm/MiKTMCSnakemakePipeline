@@ -1,3 +1,0 @@
-ModuleNotFoundError in line 7 of /home/manninm/pyflow-RNAseq/Snakefile:
-No module named 'fastq2json'
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 7, in <module>

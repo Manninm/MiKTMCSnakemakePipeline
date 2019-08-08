@@ -4,7 +4,7 @@ rule STAR_fq:
         R2 = "{sample}/{sample}.R2.fq.gz",
         index=STARINDEX,
     output: 
-        "{sample}/{sample}Aligned.sortedByCoord.out.bam"
+        "{sample}/{sample}Aligned.sortedByCoord.out.bam",
         '{sample}/{sample}Log.final.out'
     params:
         jobname = "{sample}",

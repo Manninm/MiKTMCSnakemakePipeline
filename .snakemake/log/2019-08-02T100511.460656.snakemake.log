@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 87 of /home/manninm/pyflow-RNAseq/Snakefile:
-Missing input files for rule HTSeq_fq:
-01bam_fq/Sample_70160Aligned.out.bam

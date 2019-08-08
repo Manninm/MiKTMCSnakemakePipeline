@@ -1,7 +1,0 @@
-SystemExit in line 6 of /home/manninm/pyflow-RNAseq/Snakefile:
-2
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 6, in <module>
-  File "/home/manninm/pyflow-RNAseq/fastq2json.py", line 13, in <module>
-  File "/usr/lib64/python3.6/argparse.py", line 1733, in parse_args
-  File "/usr/lib64/python3.6/argparse.py", line 2389, in error
-  File "/usr/lib64/python3.6/argparse.py", line 2376, in exit

@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 41 of /home/manninm/pyflow-RNAseq/Snakefile:
-Missing input files for rule STAR_fq:
-/home/manninm/pyflow-RNAseq/Sample_70160/Sample_70160.R1.fq.gz
-/home/manninm/pyflow-RNAseq/Sample_70160/Sample_70160.R2.fq.gz

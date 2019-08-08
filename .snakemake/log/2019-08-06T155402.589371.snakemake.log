@@ -1,3 +1,0 @@
-AttributeError in line 28 of /home/manninm/pyflow-RNAseq/Snakefile:
-module 'fastq2json' has no attribute 'main'
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 28, in <module>

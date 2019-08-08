@@ -1,3 +1,0 @@
-TypeError in line 27 of /home/manninm/pyflow-RNAseq/Snakefile:
-main() takes 0 positional arguments but 2 were given
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 27, in <module>
