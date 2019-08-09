@@ -1,0 +1,3 @@
+SyntaxError in line 17 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+invalid syntax
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 106, in <module>

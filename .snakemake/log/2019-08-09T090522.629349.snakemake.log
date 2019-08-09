@@ -1,0 +1,4 @@
+TokenError in line 101 of /home/manninm/pyflow-RNAseq/Snakefile:
+('EOF in multi-line statement', (20, 0))
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 101, in <module>
+  File "/usr/lib64/python3.6/tokenize.py", line 595, in _tokenize

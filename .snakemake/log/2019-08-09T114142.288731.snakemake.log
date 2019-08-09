@@ -1,0 +1,4 @@
+WorkflowError in line 27 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Duplicate output file pattern in rule HtSeq_Matrix. First two duplicate for entries 0 and 1
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 106, in <module>
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 27, in <module>

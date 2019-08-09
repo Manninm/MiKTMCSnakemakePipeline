@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	HtSeq_Matrix
+	3	HtSeq_Move
+	1	all
+	5
+
+[Fri Aug  9 14:59:04 2019]
+rule HtSeq_Move:
+    input: Sample_70162/Sample_70162_htseq.cnt
+    output: HtSeqCounts/Sample_70162_htseq.cnt
+    jobid: 19
+    wildcards: sample=Sample_70162
+
+
+[Fri Aug  9 14:59:04 2019]
+rule HtSeq_Move:
+    input: Sample_70161/Sample_70161_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+    jobid: 18
+    wildcards: sample=Sample_70161
+
+
+[Fri Aug  9 14:59:04 2019]
+rule HtSeq_Move:
+    input: Sample_70160/Sample_70160_htseq.cnt
+    output: HtSeqCounts/Sample_70160_htseq.cnt
+    jobid: 17
+    wildcards: sample=Sample_70160
+
+[Fri Aug  9 14:59:04 2019]
+[Fri Aug  9 14:59:04 2019]
+Error in rule HtSeq_Move:
+Error in rule HtSeq_Move:
+    jobid: 19
+    jobid: 18
+    output: HtSeqCounts/Sample_70162_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+
+
+RuleException:
+CalledProcessError in line 18 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  scripts/HtSeqRename.sh ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 126.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 18, in __rule_HtSeq_Move
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 18 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  scripts/HtSeqRename.sh ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 126.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 18, in __rule_HtSeq_Move
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Fri Aug  9 14:59:04 2019]
+Error in rule HtSeq_Move:
+    jobid: 17
+    output: HtSeqCounts/Sample_70160_htseq.cnt
+
+RuleException:
+CalledProcessError in line 18 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  scripts/HtSeqRename.sh ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 126.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 18, in __rule_HtSeq_Move
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T145904.655954.snakemake.log

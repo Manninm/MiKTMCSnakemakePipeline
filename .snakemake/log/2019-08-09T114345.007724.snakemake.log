@@ -1,0 +1,59 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	3	HtSeq_Count
+	1	HtSeq_Matrix
+	3	HtSeq_Move
+	1	all
+	8
+
+[Fri Aug  9 11:43:45 2019]
+Job 21: htseq-count Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Fri Aug  9 11:43:45 2019]
+Job 22: htseq-count Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Fri Aug  9 11:43:45 2019]
+Job 20: htseq-count Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam : 1 threads
+
+[Fri Aug  9 11:43:45 2019]
+[Fri Aug  9 11:43:45 2019]
+Error in rule HtSeq_Count:
+Error in rule HtSeq_Count:
+    jobid: 21
+    jobid: 22
+    output: Sample_70161/Sample_70161_htseq.cnt
+    output: Sample_70162/Sample_70162_htseq.cnt
+
+
+RuleException:
+CalledProcessError in line 9 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  source activate root
+		htseq-count -f bam --stranded=no --idattr gene_id --order pos -m union Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf > Sample_70162/Sample_70162_htseq.cnt 2> ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 9, in __rule_HtSeq_Count
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 9 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  source activate root
+		htseq-count -f bam --stranded=no --idattr gene_id --order pos -m union Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf > Sample_70161/Sample_70161_htseq.cnt 2> ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 9, in __rule_HtSeq_Count
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Fri Aug  9 11:43:45 2019]
+Error in rule HtSeq_Count:
+    jobid: 20
+    output: Sample_70160/Sample_70160_htseq.cnt
+
+RuleException:
+CalledProcessError in line 9 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  source activate root
+		htseq-count -f bam --stranded=no --idattr gene_id --order pos -m union Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf > Sample_70160/Sample_70160_htseq.cnt 2> ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 9, in __rule_HtSeq_Count
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T114345.007724.snakemake.log

@@ -1,0 +1,63 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	HtSeq_Matrix
+	3	HtSeq_Move
+	1	all
+	5
+
+[Fri Aug  9 14:59:39 2019]
+rule HtSeq_Move:
+    input: Sample_70160/Sample_70160_htseq.cnt
+    output: HtSeqCounts/Sample_70160_htseq.cnt
+    jobid: 17
+    wildcards: sample=Sample_70160
+
+
+[Fri Aug  9 14:59:39 2019]
+rule HtSeq_Move:
+    input: Sample_70161/Sample_70161_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+    jobid: 18
+    wildcards: sample=Sample_70161
+
+
+[Fri Aug  9 14:59:39 2019]
+rule HtSeq_Move:
+    input: Sample_70162/Sample_70162_htseq.cnt
+    output: HtSeqCounts/Sample_70162_htseq.cnt
+    jobid: 19
+    wildcards: sample=Sample_70162
+
+[Fri Aug  9 14:59:39 2019]
+Finished job 17.
+1 of 5 steps (20%) done
+[Fri Aug  9 14:59:39 2019]
+Finished job 18.
+2 of 5 steps (40%) done
+[Fri Aug  9 14:59:39 2019]
+Finished job 19.
+3 of 5 steps (60%) done
+
+[Fri Aug  9 14:59:39 2019]
+rule HtSeq_Matrix:
+    input: HtSeqCounts/Sample_70160_htseq.cnt, HtSeqCounts/Sample_70161_htseq.cnt, HtSeqCounts/Sample_70162_htseq.cnt
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 7
+
+[Fri Aug  9 14:59:45 2019]
+Finished job 7.
+4 of 5 steps (80%) done
+
+[Fri Aug  9 14:59:45 2019]
+localrule all:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt, QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf, Reports/picard_classifications.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 0
+
+[Fri Aug  9 14:59:45 2019]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T145939.716558.snakemake.log

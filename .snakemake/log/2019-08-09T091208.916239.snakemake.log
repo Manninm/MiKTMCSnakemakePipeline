@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 10 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+Missing input files for rule PicardGather:
+Sample_70162/Sample_70162picardresults.txt
+Sample_70160/Sample_70160picardresults.txt
+Sample_70161/Sample_70161picardresults.txt

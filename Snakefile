@@ -65,20 +65,25 @@ localrules: all
 # computing nodes, this is for very small jobs
 
 rule all:
-    input: 
-        TARGETS,
-        'averageMappedLength.txt',
-        'input.txt',
-        'mappedPercent.txt',
-        'percentMultimappers.txt',
-        'unmappedTooShort.txt',
-		    "QcImages/adapter_content_pngs.pdf",
-		    "QcImages/duplication_levels_pngs.pdf",
-		    "QcImages/kmer_profiles_pngs.pdf",
-		    "QcImages/per_base_quality_pngs.pdf",
-		    "QcImages/per_base_sequence_content_pngs.pdf",
-		    "QcImages/per_sequence_gc_content_pngs.pdf",	
-		    'Screen/screen_pngs.pdf',
+	input: 
+		TARGETS,
+			'Reports/averageMappedLength.txt',
+			'Reports/input.txt',
+			'Reports/mappedPercent.txt',
+			'Reports/percentMultimappers.txt',
+			'Reports/unmappedTooShort.txt',
+			"QcImages/adapter_content_pngs.pdf",
+			"QcImages/duplication_levels_pngs.pdf",
+			"QcImages/kmer_profiles_pngs.pdf",
+			"QcImages/per_base_quality_pngs.pdf",
+			"QcImages/per_base_sequence_content_pngs.pdf",
+			"QcImages/per_sequence_gc_content_pngs.pdf",	
+			'Screen/screen_pngs.pdf',
+			"Reports/picard_classifications.txt",
+			"HtSeqCounts/CountsGt0.txt",
+			"HtSeqCounts/allCounts.txt",
+			"HtSeqCounts/CountsGt0_voom.txt",
+			"HtSeqCounts/CountsGt0_voom_filtered.txt"
 #rule HTSeq_fq:
 #	input: "{sample}/{sample}Aligned.sortedByCoord.out.bam"
 #	output: "{sample}/{sample}_htseq.cnt"
@@ -97,3 +102,5 @@ rule all:
 
 include: "rules/Star_Map.smk"
 include: "rules/Fast.smk"
+include: "rules/Picard.smk"
+include: "rules/HtSeq.smk"

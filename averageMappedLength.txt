@@ -1,6 +1,3 @@
-./Sample_70161/Sample_70161Log.final.out
                           Average mapped length |	146.00
-./Sample_70162/Sample_70162Log.final.out
                           Average mapped length |	145.35
-./Sample_70160/Sample_70160Log.final.out
                           Average mapped length |	145.88

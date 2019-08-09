@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	PicardGather
+	1	all
+	2
+
+[Fri Aug  9 09:52:03 2019]
+rule PicardGather:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt
+    output: picard_classifications.txt
+    jobid: 6
+
+[Fri Aug  9 09:52:03 2019]
+Finished job 6.
+1 of 2 steps (50%) done
+
+[Fri Aug  9 09:52:03 2019]
+localrule all:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, averageMappedLength.txt, input.txt, mappedPercent.txt, percentMultimappers.txt, unmappedTooShort.txt, QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf, picard_classifications.txt
+    jobid: 0
+
+[Fri Aug  9 09:52:03 2019]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T095203.512188.snakemake.log

@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	PicardGather
+	1	all
+	2
+
+[Fri Aug  9 09:51:21 2019]
+rule PicardGather:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt
+    output: picard_classifications.txt
+    jobid: 6
+
+[Fri Aug  9 09:51:21 2019]
+Error in rule PicardGather:
+    jobid: 6
+    output: picard_classifications.txt
+
+RuleException:
+CalledProcessError in line 16 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  for i in $( find . -maxdepth 2 -wholename "*picardresults.txt" -type f ); do echo $i >> picard_classifications.txt; head -n 8 $i |tail -n 2 >> picard_classifications.txt; done; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/Picard.smk", line 16, in __rule_PicardGather
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T095121.521437.snakemake.log

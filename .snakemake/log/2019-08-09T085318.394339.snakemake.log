@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+Missing input files for rule Picard:
+Sample_70160Aligned.sortedByCoord.out.bam

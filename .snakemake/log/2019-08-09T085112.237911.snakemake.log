@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	PNGRename
+	1	PicardGather
+	1	all
+	3
+
+[Fri Aug  9 08:51:12 2019]
+rule PicardGather:
+    output: picard_classifications.txt
+    jobid: 3
+
+
+[Fri Aug  9 08:51:12 2019]
+rule PNGRename:
+    output: QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf
+    jobid: 2
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 10 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+Missing files after 5 seconds:
+picard_classifications.txt
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-09T085112.237911.snakemake.log
