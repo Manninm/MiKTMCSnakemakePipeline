@@ -1,6 +1,0 @@
-                   Uniquely mapped reads number |	1118793
-                        Uniquely mapped reads % |	45.22%
-                   Uniquely mapped reads number |	739066
-                        Uniquely mapped reads % |	32.19%
-                   Uniquely mapped reads number |	843069
-                        Uniquely mapped reads % |	45.23%

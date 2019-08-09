@@ -1,3 +1,0 @@
-                          Number of input reads |	2474012
-                          Number of input reads |	2295972
-                          Number of input reads |	1864134
