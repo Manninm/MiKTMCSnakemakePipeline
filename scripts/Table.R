@@ -1,0 +1,7 @@
+sample<-dir(path='.',pattern="*.bam",full.names=FALSE,recursive=TRUE)
+sample<-dirname(sample)
+directory<-paste(sample,'/',sep='')
+disease<-rep('Sample',length(sample))
+batch<-rep('Batch',length(sample))
+table<-cbind(directory,sample,disease,batch)
+write.table(table,'groups.txt',quote=FALSE,sep='\t')

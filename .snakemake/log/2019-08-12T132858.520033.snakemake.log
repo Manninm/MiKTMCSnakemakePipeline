@@ -1,0 +1,11 @@
+Building DAG of jobs...
+MissingInputException in line 72 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+BallGown/transcript_fpkm.txt
+BallGown/filt_whole_tx_table.txt
+BallGown/filt_transcript_fpkm.txt
+BallGown/filt_gene_expression_table.txt
+BallGown/whole_tx_table.txt
+BallGown/gene_expression_table.txt
+BallGown/filt_transcript_cov.txt
+BallGown/transcript_cov.txt

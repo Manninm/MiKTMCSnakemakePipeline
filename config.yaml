@@ -13,7 +13,12 @@ from_fastq: True
 
 ## use which program to count 
 htseq: True
-featureCount : False
+GroupdFile: False #Groupfile should list the Sample Directories and pheno data in separate columns
+
+## Plots
+Plots: True #True to get PCAs,boxplots, and Clusters
+BootStraps: 25 #Number of Bootstraps for Hierarchical clustering
+ClusterCores:22 #Number of cores for clustering
 
 # Path to a JSON file with samples and their corresponding FASTQ files.
 SAMPLES_JSON: './samples.json'

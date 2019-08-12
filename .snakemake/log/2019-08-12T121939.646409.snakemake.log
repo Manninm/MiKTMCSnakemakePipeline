@@ -1,0 +1,174 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	9	String_Tie
+	1	all
+	10
+
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161_onlyKnown.gtf
+    jobid: 11
+    wildcards: sample=Sample_70161
+
+
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70168/Sample_70168Aligned.sortedByCoord.out.bam
+    output: Sample_70168/Sample_70168_onlyKnown.gtf
+    jobid: 15
+    wildcards: sample=Sample_70168
+
+
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162_onlyKnown.gtf
+    jobid: 12
+    wildcards: sample=Sample_70162
+
+
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+    jobid: 10
+    wildcards: sample=Sample_70160
+
+[Mon Aug 12 12:19:39 2019]
+[Mon Aug 12 12:19:39 2019]
+Error in rule String_Tie:
+Error in rule String_Tie:
+
+    jobid: 15
+    jobid: 11
+[Mon Aug 12 12:19:39 2019]
+[Mon Aug 12 12:19:39 2019]
+    output: Sample_70168/Sample_70168_onlyKnown.gtf
+    output: Sample_70161/Sample_70161_onlyKnown.gtf
+Error in rule String_Tie:
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70167/Sample_70167Aligned.sortedByCoord.out.bam
+    output: Sample_70167/Sample_70167_onlyKnown.gtf
+    jobid: 14
+    wildcards: sample=Sample_70167
+
+
+    jobid: 12
+Error in rule String_Tie:
+
+    output: Sample_70162/Sample_70162_onlyKnown.gtf
+    jobid: 10
+
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70168/Sample_70168_onlyKnown.gtf Sample_70168/Sample_70168Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70161/Sample_70161_onlyKnown.gtf Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70162/Sample_70162_onlyKnown.gtf Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70169/Sample_70169Aligned.sortedByCoord.out.bam
+    output: Sample_70169/Sample_70169_onlyKnown.gtf
+    jobid: 16
+    wildcards: sample=Sample_70169
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70160/Sample_70160_onlyKnown.gtf Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Mon Aug 12 12:19:39 2019]
+Error in rule String_Tie:
+    jobid: 14
+    output: Sample_70167/Sample_70167_onlyKnown.gtf
+
+
+[Mon Aug 12 12:19:39 2019]
+rule String_Tie:
+    input: Sample_70171/Sample_70171Aligned.sortedByCoord.out.bam
+    output: Sample_70171/Sample_70171_onlyKnown.gtf
+    jobid: 18
+    wildcards: sample=Sample_70171
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70167/Sample_70167_onlyKnown.gtf Sample_70167/Sample_70167Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Mon Aug 12 12:19:39 2019]
+Error in rule String_Tie:
+
+    jobid: 16
+[Mon Aug 12 12:19:40 2019]
+    output: Sample_70169/Sample_70169_onlyKnown.gtf
+rule String_Tie:
+    input: Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam
+    output: Sample_70166/Sample_70166_onlyKnown.gtf
+    jobid: 13
+    wildcards: sample=Sample_70166
+
+
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70169/Sample_70169_onlyKnown.gtf Sample_70169/Sample_70169Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Mon Aug 12 12:19:40 2019]
+[Mon Aug 12 12:19:40 2019]
+rule String_Tie:
+    input: Sample_70170/Sample_70170Aligned.sortedByCoord.out.bam
+    output: Sample_70170/Sample_70170_onlyKnown.gtf
+    jobid: 17
+    wildcards: sample=Sample_70170
+Error in rule String_Tie:
+
+    jobid: 18
+    output: Sample_70171/Sample_70171_onlyKnown.gtf
+
+[Mon Aug 12 12:19:40 2019]
+Error in rule String_Tie:
+    jobid: 13
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70171/Sample_70171_onlyKnown.gtf Sample_70171/Sample_70171Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+    output: Sample_70166/Sample_70166_onlyKnown.gtf
+
+[Mon Aug 12 12:19:40 2019]
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70166/Sample_70166_onlyKnown.gtf Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Error in rule String_Tie:
+    jobid: 17
+    output: Sample_70170/Sample_70170_onlyKnown.gtf
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  stringtie -p 24 -eB -G /home/deepSeq/ENSEMBL_GRCH38/transcripts/Homo_sapiens.GRCh38.86.gtf -o Sample_70170/Sample_70170_onlyKnown.gtf Sample_70170/Sample_70170Aligned.sortedByCoord.out.bam; ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/StringTie.smk", line 7, in __rule_String_Tie
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-12T121939.646409.snakemake.log

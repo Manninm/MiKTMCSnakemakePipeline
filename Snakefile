@@ -45,20 +45,21 @@ TARGETS = []
 
 ## constructe the target if the inputs are fastqs
 if config["from_fastq"]:
-    ALL_BAM = expand("{sample}/{sample}Aligned.sortedByCoord.out.bam", sample = SAMPLES)
-    ALL_STARLOG = expand("{sample}/{sample}Log.final.out", sample = SAMPLES)
-    TARGETS.extend(ALL_STARLOG)
-    TARGETS.extend(ALL_BAM)
-    print(TARGETS)
+	ALL_BAM = expand("{sample}/{sample}Aligned.sortedByCoord.out.bam", sample = SAMPLES)
+	ALL_STARLOG = expand("{sample}/{sample}Log.final.out", sample = SAMPLES)
+	ALL_STRING = expand("{sample}/{sample}_onlyKnown.gtf",sample=SAMPLES)
+	TARGETS.extend(ALL_STARLOG)
+	TARGETS.extend(ALL_BAM)
+	TARGETS.extend(ALL_STRING)
+
     
 	#if config["htseq"]:
 	#	ALL_CNT = expand("{sample}/{sample}_htseq.cnt", sample = SAMPLES)
 	#	TARGETS.extend(ALL_CNT)
-    
-if not config["from_fastq"]:
-	if config["htseq"]:
-		ALL_CNT = expand("{sample}/{sample}_htseq.cnt_htseq.cnt", sample = SAMPLES)
-		TARGETS.extend(ALL_CNT)
+
+if not config["GroupdFile"]:
+	os.system('Rscript scripts/Table.R')
+	print("No Group File provided!")
 
 localrules: all
 # localrules will let the rule run locally rather than submitting to cluster
@@ -83,19 +84,16 @@ rule all:
 			"HtSeqCounts/CountsGt0.txt",
 			"HtSeqCounts/allCounts.txt",
 			"HtSeqCounts/CountsGt0_voom.txt",
-			"HtSeqCounts/CountsGt0_voom_filtered.txt"
-#rule HTSeq_fq:
-#	input: "{sample}/{sample}Aligned.sortedByCoord.out.bam"
-#	output: "{sample}/{sample}_htseq.cnt"
-#	log: "00log/{sample}_htseq_count.log"
-#	params: 
-#		jobname = "{sample}"
-#	threads: 1
-#	message: "htseq-count {input} : {threads} threads"
-#	shell:
-#		"""
-#		source activate root
-#		htseq-count -m intersection-nonempty --stranded=no --idattr gene_id -r name -f bam {input} {MYGTF} > {output} 2> {log}
+			"HtSeqCounts/CountsGt0_voom_filtered.txt",
+			"BallGown/gene_expression_table.txt",
+			"BallGown/transcript_fpkm.txt",
+			"BallGown/transcript_cov.txt",
+			"BallGown/whole_tx_table.txt",
+			"BallGown/filt_gene_expression_table.txt",
+			"BallGown/filt_transcript_fpkm.txt",
+			"BallGown/filt_transcript_cov.txt",
+			"BallGown/filt_whole_tx_table.txt",
+
 #		"""
  
 #Load rules for modularity
@@ -104,3 +102,8 @@ include: "rules/Star_Map.smk"
 include: "rules/Fast.smk"
 include: "rules/Picard.smk"
 include: "rules/HtSeq.smk"
+include: "rules/Reports.smk"
+include: "rules/StringTie.smk"
+include: "rules/BallGown.smk"
+#if config["Plots"]:
+	#include: "rules/Cluster.smk"

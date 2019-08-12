@@ -1,0 +1,118 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	9	String_Tie
+	1	all
+	10
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70171/Sample_70171Aligned.sortedByCoord.out.bam
+    output: Sample_70171/Sample_70171_onlyKnown.gtf
+    jobid: 18
+    wildcards: sample=Sample_70171
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70167/Sample_70167Aligned.sortedByCoord.out.bam
+    output: Sample_70167/Sample_70167_onlyKnown.gtf
+    jobid: 14
+    wildcards: sample=Sample_70167
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161_onlyKnown.gtf
+    jobid: 11
+    wildcards: sample=Sample_70161
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70168/Sample_70168Aligned.sortedByCoord.out.bam
+    output: Sample_70168/Sample_70168_onlyKnown.gtf
+    jobid: 15
+    wildcards: sample=Sample_70168
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+    jobid: 10
+    wildcards: sample=Sample_70160
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70170/Sample_70170Aligned.sortedByCoord.out.bam
+    output: Sample_70170/Sample_70170_onlyKnown.gtf
+    jobid: 17
+    wildcards: sample=Sample_70170
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70169/Sample_70169Aligned.sortedByCoord.out.bam
+    output: Sample_70169/Sample_70169_onlyKnown.gtf
+    jobid: 16
+    wildcards: sample=Sample_70169
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam
+    output: Sample_70166/Sample_70166_onlyKnown.gtf
+    jobid: 13
+    wildcards: sample=Sample_70166
+
+
+[Mon Aug 12 12:30:20 2019]
+rule String_Tie:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162_onlyKnown.gtf
+    jobid: 12
+    wildcards: sample=Sample_70162
+
+[Mon Aug 12 12:31:32 2019]
+Finished job 15.
+1 of 10 steps (10%) done
+[Mon Aug 12 12:31:35 2019]
+Finished job 10.
+2 of 10 steps (20%) done
+[Mon Aug 12 12:31:41 2019]
+Finished job 18.
+3 of 10 steps (30%) done
+[Mon Aug 12 12:31:42 2019]
+Finished job 11.
+4 of 10 steps (40%) done
+[Mon Aug 12 12:32:26 2019]
+Finished job 12.
+5 of 10 steps (50%) done
+[Mon Aug 12 12:32:40 2019]
+Finished job 17.
+6 of 10 steps (60%) done
+[Mon Aug 12 12:32:50 2019]
+Finished job 14.
+7 of 10 steps (70%) done
+[Mon Aug 12 12:32:52 2019]
+Finished job 16.
+8 of 10 steps (80%) done
+[Mon Aug 12 12:33:05 2019]
+Finished job 13.
+9 of 10 steps (90%) done
+
+[Mon Aug 12 12:33:05 2019]
+localrule all:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70166/Sample_70166Log.final.out, Sample_70167/Sample_70167Log.final.out, Sample_70168/Sample_70168Log.final.out, Sample_70169/Sample_70169Log.final.out, Sample_70170/Sample_70170Log.final.out, Sample_70171/Sample_70171Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam, Sample_70167/Sample_70167Aligned.sortedByCoord.out.bam, Sample_70168/Sample_70168Aligned.sortedByCoord.out.bam, Sample_70169/Sample_70169Aligned.sortedByCoord.out.bam, Sample_70170/Sample_70170Aligned.sortedByCoord.out.bam, Sample_70171/Sample_70171Aligned.sortedByCoord.out.bam, Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf, Sample_70166/Sample_70166_onlyKnown.gtf, Sample_70167/Sample_70167_onlyKnown.gtf, Sample_70168/Sample_70168_onlyKnown.gtf, Sample_70169/Sample_70169_onlyKnown.gtf, Sample_70170/Sample_70170_onlyKnown.gtf, Sample_70171/Sample_70171_onlyKnown.gtf, Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt, QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf, Reports/picard_classifications.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 0
+
+[Mon Aug 12 12:33:05 2019]
+Finished job 0.
+10 of 10 steps (100%) done
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-12T123019.971195.snakemake.log
