@@ -18,7 +18,7 @@ GroupdFile: False #Groupfile should list the Sample Directories and pheno data i
 ## Plots
 Plots: True #True to get PCAs,boxplots, and Clusters
 BootStraps: 25 #Number of Bootstraps for Hierarchical clustering
-ClusterCores:22 #Number of cores for clustering
+ClusterCores: 22 #Number of cores for clustering
 
 # Path to a JSON file with samples and their corresponding FASTQ files.
 SAMPLES_JSON: './samples.json'

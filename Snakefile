@@ -57,9 +57,6 @@ if config["from_fastq"]:
 	#	ALL_CNT = expand("{sample}/{sample}_htseq.cnt", sample = SAMPLES)
 	#	TARGETS.extend(ALL_CNT)
 
-if not config["GroupdFile"]:
-	os.system('Rscript scripts/Table.R')
-	print("No Group File provided!")
 
 localrules: all
 # localrules will let the rule run locally rather than submitting to cluster
