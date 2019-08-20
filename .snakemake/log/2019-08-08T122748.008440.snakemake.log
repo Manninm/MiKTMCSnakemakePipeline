@@ -1,3 +1,0 @@
-WorkflowError in line 98 of /home/manninm/pyflow-RNAseq/Snakefile:
-Failed to open /home/manninm/pyflow-RNAseq/rules/Star_Map.smk.
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 98, in <module>

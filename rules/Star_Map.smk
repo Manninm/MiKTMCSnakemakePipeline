@@ -12,7 +12,7 @@ rule STAR_fq:
 	message: "aligning {input} using STAR: {threads} threads"
 	shell:
 		"""
-        STAR --twopassMode Basic --runThreadN {threads} \
+        STAR --twopassMode Basic --runThreadN {StarThreads} \
         --genomeDir {STARINDEX} --outSAMtype BAM SortedByCoordinate \
         --outBAMcompression 10 --outSAMstrandField intronMotif \
         --outBAMsortingThreadN {SortThreads} \

@@ -26,10 +26,5 @@ rule HtSeq_Matrix:
 		"HtSeqCounts/CountsGt0.txt",
 		"HtSeqCounts/CountsGt0_voom.txt",
 		"HtSeqCounts/CountsGt0_voom_filtered.txt"
-	script:
-		"../scripts/HtSeqVoomMerge.R"
-		
-		
-
-		
-	
+	shell:
+		"cd /HtSeqCounts/ Rscript ../scripts/HtSeqVoomMerge.R"

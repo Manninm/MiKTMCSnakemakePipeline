@@ -1,4 +1,0 @@
-WildcardError in line 3 of /home/manninm/pyflow-RNAseq/rules/BallGown.smk:
-No values given for wildcard 'sample'.
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 122, in <module>
-  File "/home/manninm/pyflow-RNAseq/rules/BallGown.smk", line 3, in <module>

@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 69 of /home/manninm/pyflow-RNAseq/Snakefile:
-Missing input files for rule all:
-Sample_70162/Sample_70162_onlyKnown.gtf
-Sample_70161/Sample_70161_onlyKnown.gtf
-Sample_70160/Sample_70160_onlyKnown.gtf

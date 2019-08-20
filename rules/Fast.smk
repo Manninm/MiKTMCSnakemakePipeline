@@ -78,19 +78,18 @@ rule PNGRename:
 	run:
 		if not os.path.exists(MainDir+'QcImages'):
 			os.mkdir(MainDir+'QcImages')
-		imageR1paths=glob.glob(MainDir+'*/*'+'.R1_fastqc/Images/')
-		for i in range(len(imageR1paths)):
-			files=os.listdir(imageR1paths[i])
-			for image in range(len(files)):
-				shutil.copyfile(imageR1paths[i]+files[image],MainDir+'QcImages/'+SAMPLES[i]+'.R1_'+files[image])	
-		imageR2paths=glob.glob(MainDir+'*/*'+'.R2_fastqc/Images/')
-		for i in range(len(imageR2paths)):
-			files=os.listdir(imageR2paths[i])
-			for image in range(len(files)):
-				shutil.copyfile(imageR2paths[i]+files[image],MainDir+'QcImages/'+SAMPLES[i]+'.R2_'+files[image])	
-		if not os.path.exists(MainDir+'Screen/'):
-			os.mkdir(MainDir+'Screen/')
 		for i in range(len(SAMPLES)):
-			print(SAMPLES[i]+"/"+SAMPLES[i]+'_screen.png')
-			shutil.copyfile(SAMPLES[i]+"/"+SAMPLES[i]+'_screen.png','Screen/'+SAMPLES[i]+'_screen.png')
+			R1paths=os.listdir(SAMPLES[i]+'/'+SAMPLES[i]+'.R1_fastqc/Images/')
+			for image in range(len(R1paths)):
+				print(R1paths[image])
+				shutil.copyfile(SAMPLES[i]+'/'+SAMPLES[i]+'.R1_fastqc/Images/'+R1paths[image],'QcImages/'+SAMPLES[i]+'.R1.'+R1paths[image])
+		for i2 in range(len(SAMPLES)):
+			R2paths=os.listdir(SAMPLES[i2]+'/'+SAMPLES[i2]+'.R2_fastqc/Images/')
+			for image2 in range(len(R2paths)):
+				print(R2paths[image2])
+				shutil.copyfile(SAMPLES[i2]+'/'+SAMPLES[i2]+'.R2_fastqc/Images/'+R2paths[image2],'QcImages/'+SAMPLES[i2]+'.R2.'+R2paths[image2])
+		if not os.path.exists(MainDir+'Screen/'):
+			os.mkdir(MainDir+'Screen/')				
+		for i in range(len(SAMPLES)):
+			shutil.copyfile(SAMPLES[i]+"/"+SAMPLES[i]+'_screen.png','Screen/'+SAMPLES[i]+'_screen.png')				
 		shell("cd QcImages/; Rscript ../scripts/RFastQPlot.r && echo 'RFastQPlot.r worked' || echo 'RFastQPlot.r failed'; cd ../Screen/; Rscript ../scripts/RScreenPlot.r  && echo 'RScreenPlotnPlot.r worked' || echo 'RScreenPlot.r failed'; cd ../") 

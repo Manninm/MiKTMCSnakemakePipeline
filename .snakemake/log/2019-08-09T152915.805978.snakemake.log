@@ -1,3 +1,0 @@
-SyntaxError in line 3 of /home/manninm/pyflow-RNAseq/rules/StringTie.smk:
-invalid syntax
-  File "/home/manninm/pyflow-RNAseq/Snakefile", line 110, in <module>

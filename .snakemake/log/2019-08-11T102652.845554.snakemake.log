@@ -1,9 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 67 of /home/manninm/pyflow-RNAseq/Snakefile:
-Missing input files for rule all:
-mappedPercent.txt
-averageMappedLength.txt
-unmappedTooShort.txt
-picard_classifications.txt
-input.txt
-percentMultimappers.txt

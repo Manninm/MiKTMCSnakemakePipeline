@@ -1,3 +1,4 @@
+#!/usr/bin/env Python
 import os
 import glob
 import re
@@ -8,17 +9,18 @@ import fastq2json
 from itertools import chain, combinations
 import shutil
 from shutil import copyfile
+from snakemake.logging import logger
 #Testing for sequence file extension
 directory = "."
 MainDir = os.path.abspath(directory) + "/"
 ## build the dictionary with full path for each for sequence files
 fastq=glob.glob(MainDir+'*/*'+'R[12]'+'**fastq.gz')
 if len(fastq) > 0 :
-    print('Sequence file extensions have fastq')
-    os.system('scripts/Move.sh')
+    logger.info('Sequence file extensions have fastq')
+    os.system('scripts/Move.sh');
     fastq2json.fastq_json(MainDir)
-else:
-    print('File extensions  are good')
+else :
+    logger.info('File extensions are good')
     if os.path.exists(MainDir+'samples.json'):
         pass
     else:
@@ -40,6 +42,7 @@ MYGTF = config["MYGTF"]
 STARINDEX = config["STARINDEX"]
 
 SortThreads = config['SortThreads']
+StarThreads = config['StarThreads']
 
 TARGETS = []
 

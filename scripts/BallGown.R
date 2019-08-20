@@ -7,7 +7,7 @@ dir.create('BallGown')
 pheno_data<-read.table("groups.txt",header=TRUE) #table of folder names of samples to be evaluated
 #Start Creating Table to subset for Bg Object
 dirs<-as.vector(pheno_data[,c(1)])
-pheno_data<-pheno_data[,-c(1)]
+pheno_data<-pheno_data[,c(2,3,4)]
 #Create Table for Disease designations to append to alldata
 bg<-ballgown(samples=dirs, pData=pheno_data, meas="all")
 gene_expression = gexpr(bg)

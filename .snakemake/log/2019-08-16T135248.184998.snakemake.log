@@ -1,0 +1,4 @@
+KeyboardInterrupt in line 103 of /home/manninm/pyflow-RNAseq/Snakefile.
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 103, in <module>
+  File "/usr/lib64/python3.6/tokenize.py", line 512, in _tokenize
+  File "/usr/lib64/python3.6/codecs.py", line 318, in decode
