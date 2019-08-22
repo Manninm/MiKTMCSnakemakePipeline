@@ -1,0 +1,2 @@
+SyntaxError in line 104 of /home/manninm/pyflow-RNAseq/Snakefile:
+EOF in multi-line statement (Snakefile, line 104)

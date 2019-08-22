@@ -1,0 +1,4 @@
+Sequence file extensions have fastq
+NameError in line 20 of /home/manninm/pyflow-RNAseq/Snakefile:
+name 'SAMPLES' is not defined
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 20, in <module>

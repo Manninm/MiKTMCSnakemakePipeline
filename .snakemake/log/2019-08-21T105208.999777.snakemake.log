@@ -1,0 +1,4 @@
+File extensions are good
+SyntaxError in line 30 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+EOL while scanning string literal
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 104, in <module>

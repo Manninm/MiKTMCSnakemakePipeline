@@ -1,0 +1,30 @@
+File extensions are good
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	HtSeq_Matrix
+	1	all
+	2
+
+[Wed Aug 21 10:50:26 2019]
+rule HtSeq_Matrix:
+    input: HtSeqCounts/Sample_70160_htseq.cnt, HtSeqCounts/Sample_70161_htseq.cnt, HtSeqCounts/Sample_70162_htseq.cnt
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 10
+
+[Wed Aug 21 10:50:26 2019]
+Error in rule HtSeq_Matrix:
+    jobid: 10
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+
+RuleException:
+CalledProcessError in line 30 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd /HtSeqCounts/; Rscript ../scripts/HtSeqVoomMerge.R ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 30, in __rule_HtSeq_Matrix
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-21T105026.250499.snakemake.log

@@ -17,7 +17,7 @@ MainDir = os.path.abspath(directory) + "/"
 fastq=glob.glob(MainDir+'*/*'+'R[12]'+'**fastq.gz')
 if len(fastq) > 0 :
     logger.info('Sequence file extensions have fastq')
-    os.system('scripts/Move.sh');
+    os.system('./scripts/Move.sh');
     fastq2json.fastq_json(MainDir)
 else :
     logger.info('File extensions are good')
