@@ -1,0 +1,5 @@
+File extensions are good
+Building DAG of jobs...
+MissingInputException in line 12 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Missing input files for rule HtSeq_Move:
+Sample_70160/Sample_70160_htseq.cnt

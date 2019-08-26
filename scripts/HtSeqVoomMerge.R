@@ -3,17 +3,17 @@ dataset <- do.call("cbind",lapply(file_list,FUN=function(files){read.delim(files
 file_list<-gsub("_htseq.out_no.pos.union.txt", "", file_list)
 colnames(dataset)<-file_list
 dim(dataset)
-write.table(dataset,"HtSeqCounts/allCounts.txt", sep="\t", quote=FALSE)
+write.table(dataset,"allCounts.txt", sep="\t", quote=FALSE)
 length(which(rowSums(dataset)>0))
 dataset_short<-dataset[which(rowSums(dataset)>0),]
 dataset_short<-dataset_short[-c(grep("__.*",rownames(dataset_short))),]
 dim(dataset_short)
-write.table(dataset_short, "HtSeqCounts/CountsGt0.txt", sep="\t", quote=FALSE)
+write.table(dataset_short, "CountsGt0.txt", sep="\t", quote=FALSE)
 library(limma)
 exp<-voom(dataset_short)
 exp<-2^exp$E
 exp<-log2(exp+1)
-write.table(exp,"HtSeqCounts/CountsGt0_voom.txt", sep="\t", quote=FALSE)
+write.table(exp,"CountsGt0_voom.txt", sep="\t", quote=FALSE)
 median<-apply(exp,1,median)
 exp<-cbind(exp, median)
 exp<-exp[order(median, decreasing=T),]
@@ -25,5 +25,5 @@ minval<-min(low)
 cutoff<-minval+(2*stdev)
 keep<-apply(exp,1,FUN=function(row){which(length(which(row>=cutoff))>=3)})
 filtered<-exp[names(which(keep>0)),]
-write.table(filtered, "HtSeqCounts/CountsGt0_voom_filtered.txt", sep="\t", quote=FALSE)
+write.table(filtered, "CountsGt0_voom_filtered.txt", sep="\t", quote=FALSE)
 save.image("filteringR.image",compress=T)

@@ -1,0 +1,4 @@
+Sequence file extensions have fastq
+WorkflowError in line 126 of /home/manninm/pyflow-RNAseq/Snakefile:
+Failed to open /home/manninm/pyflow-RNAseq/rules/BallGenePlots.smk.
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 126, in <module>

@@ -27,3 +27,17 @@ rule PicardGather:
 		"""
 		for i in $( find . -maxdepth 2 -wholename "*picardresults.txt" -type f ); do echo $i >> Reports/picard_classifications.txt; head -n 8 $i |tail -n 2 >> Reports/picard_classifications.txt; done
 		"""
+rule MultiQc:
+	input:
+		expand("{sample}/{sample}picardresults.txt",sample=SAMPLES),
+		expand("{sample}/{sample}Log.final.out",sample=SAMPLES),
+		expand("{sample}/{sample}Aligned.sortedByCoord.out.bam",sample=SAMPLES),
+		expand("{sample}/{sample}.R1_fastqc/summary.txt",sample=SAMPLES),
+		expand("{sample}/{sample}.R2_fastqc/summary.txt",sample=SAMPLES),
+		expand("{sample}/{sample}_htseq.cnt",sample=SAMPLES)
+	output:
+		"multiqc_report.html",
+	shell:
+		"""
+		multiqc --module htseq --module star --module picard --module fastqc --module fastq_screen .
+		"""		

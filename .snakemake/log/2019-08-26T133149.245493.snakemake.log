@@ -1,0 +1,97 @@
+Sequence file extensions have fastq
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	Ball_Gown
+	1	HtSeq_Matrix
+	1	MultiQc
+	1	PNGRename
+	1	PicardGather
+	1	StarCollect
+	1	all
+	7
+
+[Mon Aug 26 13:31:49 2019]
+rule MultiQc:
+    output: multiqc_report.html
+    jobid: 6
+
+
+[Mon Aug 26 13:31:49 2019]
+rule StarCollect:
+    output: Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt
+    jobid: 1
+
+
+[Mon Aug 26 13:31:49 2019]
+rule PicardGather:
+    output: Reports/picard_classifications.txt
+    jobid: 3
+
+
+[Mon Aug 26 13:31:49 2019]
+rule HtSeq_Matrix:
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 4
+
+
+[Mon Aug 26 13:31:49 2019]
+rule Ball_Gown:
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+    jobid: 5
+
+Waiting at most 5 seconds for missing files.
+
+[Mon Aug 26 13:31:49 2019]
+rule PNGRename:
+    output: QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf
+    jobid: 2
+
+[Mon Aug 26 13:31:49 2019]
+Error in rule HtSeq_Matrix:
+    jobid: 4
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+
+RuleException:
+CalledProcessError in line 30 of /home/manninm/pyflow-RNAseq/rules/HtSeq.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd /HtSeqCounts/ Rscript ../scripts/HtSeqVoomMerge.R ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeq.smk", line 30, in __rule_HtSeq_Matrix
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Terminating processes on user request, this might take some time.
+[Mon Aug 26 13:31:51 2019]
+Error in rule Ball_Gown:
+    jobid: 5
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+
+RuleException:
+CalledProcessError in line 17 of /home/manninm/pyflow-RNAseq/rules/BallGown.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  Rscript scripts/BallGown.R ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGown.smk", line 17, in __rule_Ball_Gown
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Mon Aug 26 13:31:52 2019]
+Error in rule MultiQc:
+    jobid: 6
+    output: multiqc_report.html
+
+RuleException:
+CalledProcessError in line 41 of /home/manninm/pyflow-RNAseq/rules/Reports.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  multiqc --module htseq --module star --module picard --module fastqc --module fastq_screen . ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/Reports.smk", line 41, in __rule_MultiQc
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+MissingOutputException in line 21 of /home/manninm/pyflow-RNAseq/rules/Reports.smk:
+Missing files after 5 seconds:
+Reports/picard_classifications.txt
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 1 of /home/manninm/pyflow-RNAseq/rules/Reports.smk:
+Missing files after 5 seconds:
+Reports/averageMappedLength.txt
+Reports/input.txt
+Reports/mappedPercent.txt
+Reports/percentMultimappers.txt
+Reports/unmappedTooShort.txt
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-26T133149.245493.snakemake.log

@@ -1,0 +1,4 @@
+Sequence file extensions have fastq
+NameError in line 52 of /home/manninm/pyflow-RNAseq/Snakefile:
+name 'fastqmain' is not defined
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 52, in <module>

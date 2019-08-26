@@ -6,6 +6,7 @@ from os.path import join
 import argparse
 from collections import defaultdict
 import fastq2json
+import fastqmain
 from itertools import chain, combinations
 import shutil
 from shutil import copyfile
@@ -16,16 +17,15 @@ MainDir = os.path.abspath(directory) + "/"
 ## build the dictionary with full path for each for sequence files
 fastq=glob.glob(MainDir+'*/*'+'R[12]'+'**fastq.gz')
 if len(fastq) > 0 :
-    logger.info('Sequence file extensions have fastq')
-    os.system('./scripts/Move.sh');
-    fastq2json.fastq_json(MainDir)
+	logger.info('Sequence file extensions have fastq')
+	os.system('scripts/Move.sh')
+	fastq2json.fastq_json(MainDir)
 else :
     logger.info('File extensions are good')
     if os.path.exists(MainDir+'samples.json'):
         pass
     else:
-        fastq2json.fastq_json(MainDir)
-            
+        fastq2json.fastq_json(MainDir)            
 shell.prefix("set -eo pipefail; echo BEGIN at $(date); ")
 shell.suffix("; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat")
 
@@ -42,19 +42,33 @@ MYGTF = config["MYGTF"]
 STARINDEX = config["STARINDEX"]
 
 SortThreads = config['SortThreads']
+
 StarThreads = config['StarThreads']
+
+GeneBootStraps = config['GeneBootStraps']
+
+TxBootStraps = config['TxBootStraps']
+
+HcCores = config['HcCores']
+
 
 TARGETS = []
 
+	
 ## constructe the target if the inputs are fastqs
 if config["from_fastq"]:
 	ALL_BAM = expand("{sample}/{sample}Aligned.sortedByCoord.out.bam", sample = SAMPLES)
 	ALL_STARLOG = expand("{sample}/{sample}Log.final.out", sample = SAMPLES)
 	ALL_STRING = expand("{sample}/{sample}_onlyKnown.gtf",sample=SAMPLES)
+	ALL_PICARD = expand("{sample}/{sample}picardresults.txt",sample=SAMPLES)
 	TARGETS.extend(ALL_STARLOG)
 	TARGETS.extend(ALL_BAM)
 	TARGETS.extend(ALL_STRING)
-
+	TARGETS.extend(ALL_PICARD)
+if config["Plots"]:
+	Plots="Plots/BoxPlotHtSeqVoomGt0.png", "Plots/PCA1v2&2v3&3v4CountsGt0_voom_filtered", expand("Plots/Gt0_voom_filteredWard.D.{GeneBootStraps}",GeneBootStraps=GeneBootStraps), expand("Plots/Gt0_voom_filteredWard.D2.{GeneBootStraps}",GeneBootStraps=GeneBootStraps), "Plots/BoxPlotfilt_gene_expression_table.png", "Plots/PCA1v2&2v3&3v4filt_gene_expression_table", expand("Plots/filt_gene_expression_tableWard.D.{GeneBootStraps}",GeneBootStraps=GeneBootStraps), expand("Plots/filt_gene_expression_tableWard.D2.{GeneBootStraps}",GeneBootStraps=GeneBootStraps), "Plots/BoxPlottranscript_fpkm.png", "Plots/PCA1v2&2v3&3v4transcript_fpkm", expand("Plots/transcript_fpkmWard.D.{GeneBootStraps}",GeneBootStraps=GeneBootStraps), expand("Plots/transcript_fpkmWard.D2.{GeneBootStraps}",GeneBootStraps=GeneBootStraps),
+else:
+	Plots=[]
     
 	#if config["htseq"]:
 	#	ALL_CNT = expand("{sample}/{sample}_htseq.cnt", sample = SAMPLES)
@@ -67,7 +81,7 @@ localrules: all
 
 rule all:
 	input: 
-		TARGETS,
+		TARGETS, Plots,
 			'Reports/averageMappedLength.txt',
 			'Reports/input.txt',
 			'Reports/mappedPercent.txt',
@@ -93,8 +107,9 @@ rule all:
 			"BallGown/filt_transcript_fpkm.txt",
 			"BallGown/filt_transcript_cov.txt",
 			"BallGown/filt_whole_tx_table.txt",
-
-#		"""
+			"multiqc_report.html",
+			
+			
  
 #Load rules for modularity
 
@@ -105,5 +120,6 @@ include: "rules/HtSeq.smk"
 include: "rules/Reports.smk"
 include: "rules/StringTie.smk"
 include: "rules/BallGown.smk"
-#if config["Plots"]:
-	#include: "rules/Cluster.smk"
+include: "rules/HtSeqPlots.smk"
+include: "rules/BallGownGenePlots.smk"
+include: "rules/BallGownTx.smk"

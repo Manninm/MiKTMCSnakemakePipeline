@@ -1,0 +1,8 @@
+Sequence file extensions have fastq
+Building DAG of jobs...
+MissingInputException in line 84 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+Plots/filt_gene_expression_tableD225
+Plots/PCA1v2&2v3&3v4transcript_fpkm
+Plots/transcript_fpkmD225
+Plots/transcript_fpkmWardD25

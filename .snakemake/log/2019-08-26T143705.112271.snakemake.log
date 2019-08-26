@@ -1,0 +1,8 @@
+File extensions are good
+Building DAG of jobs...
+MissingInputException in line 30 of /home/manninm/pyflow-RNAseq/rules/Reports.smk:
+Missing input files for rule MultiQc:
+Sample_70161/Sample_70161.R1_fastqc/summary.txt
+Sample_70161/Sample_70161.R2_fstqc/summary.txt
+Sample_70160/Sample_70160.R1_fastqc/summary.txt
+Sample_70160/Sample_70160.R2_fstqc/summary.txt

@@ -1,0 +1,4 @@
+File extensions are good
+NameError in line 27 of /home/manninm/pyflow-RNAseq/Snakefile:
+name 'fastq2json' is not defined
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 27, in <module>

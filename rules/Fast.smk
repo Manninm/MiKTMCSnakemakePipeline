@@ -22,7 +22,10 @@ rule fastqc:
 		"{sample}/{sample}.R2_fastqc/Images/per_base_quality.png",
 		"{sample}/{sample}.R2_fastqc/Images/per_base_sequence_content.png",
 		"{sample}/{sample}.R2_fastqc/Images/adapter_content.png",
-		"{sample}/{sample}.R2_fastqc/Images/per_sequence_quality.png"
+		"{sample}/{sample}.R2_fastqc/Images/per_sequence_quality.png",
+		"{sample}/{sample}.R1_fastqc/summary.txt",
+		"{sample}/{sample}.R2_fastqc/summary.txt",
+
 	threads: 2
 	shell:
 		"""

@@ -27,4 +27,4 @@ rule HtSeq_Matrix:
 		"HtSeqCounts/CountsGt0_voom.txt",
 		"HtSeqCounts/CountsGt0_voom_filtered.txt"
 	shell:
-		"cd /HtSeqCounts/ Rscript ../scripts/HtSeqVoomMerge.R"
+		"cd HtSeqCounts/; Rscript ../scripts/HtSeqVoomMerge.R"

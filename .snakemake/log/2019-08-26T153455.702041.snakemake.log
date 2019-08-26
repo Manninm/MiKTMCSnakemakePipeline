@@ -1,0 +1,8 @@
+File extensions are good
+Building DAG of jobs...
+MissingInputException in line 82 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+Plots/transcript_fpkm.D2.25
+Plots/PCA1v2&2v3&3v4transcript_fpkm
+Plots/filt_gene_expression_table.D2.25
+Plots/transcript_fpkmWard.D.25

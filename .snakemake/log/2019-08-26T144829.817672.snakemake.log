@@ -1,0 +1,67 @@
+File extensions are good
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	Ball_Gown
+	2	HtSeq_Count
+	1	HtSeq_Matrix
+	2	HtSeq_Move
+	1	MultiQc
+	1	PNGRename
+	2	Picard
+	1	PicardGather
+	2	STAR_fq
+	1	StarCollect
+	2	String_Tie
+	1	all
+	2	fastqScreen
+	19
+
+[Mon Aug 26 14:48:31 2019]
+rule fastqScreen:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png
+    jobid: 15
+    wildcards: sample=Sample_70160
+    priority: 3
+    threads: 4
+
+
+[Mon Aug 26 14:48:31 2019]
+rule fastqScreen:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png
+    jobid: 16
+    wildcards: sample=Sample_70161
+    priority: 3
+    threads: 4
+
+Terminating processes on user request, this might take some time.
+[Mon Aug 26 14:48:44 2019]
+Error in rule fastqScreen:
+    jobid: 15
+[Mon Aug 26 14:48:44 2019]
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png
+Error in rule fastqScreen:
+
+    jobid: 16
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png
+
+RuleException:
+CalledProcessError in line 47 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cat Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz > Sample_70160/Sample_70160.fq.gz && fastq_screen --quiet --force --threads 4 Sample_70160/Sample_70160.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 47, in __rule_fastqScreen
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 47 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cat Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz > Sample_70161/Sample_70161.fq.gz && fastq_screen --quiet --force --threads 4 Sample_70161/Sample_70161.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 47, in __rule_fastqScreen
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job fastqScreen since they might be corrupted:
+Sample_70160/Sample_70160.fq.gz
+Removing output files of failed job fastqScreen since they might be corrupted:
+Sample_70161/Sample_70161.fq.gz
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-26T144829.817672.snakemake.log

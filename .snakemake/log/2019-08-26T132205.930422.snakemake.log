@@ -1,0 +1,5 @@
+Sequence file extensions have fastq
+CreateRuleException in line 10 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+The name HtSeqPca is already used by another rule
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 128, in <module>
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 10, in <module>

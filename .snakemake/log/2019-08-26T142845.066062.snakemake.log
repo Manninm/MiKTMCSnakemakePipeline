@@ -1,0 +1,6 @@
+Sequence file extensions have fastq
+Building DAG of jobs...
+MissingInputException in line 1 of /home/manninm/pyflow-RNAseq/rules/Star_Map.smk:
+Missing input files for rule STAR_fq:
+70160_ATTACTCG-TATAGCCT_S1_L001/70160_ATTACTCG-TATAGCCT_S1_L001.R1.fq.gz
+70160_ATTACTCG-TATAGCCT_S1_L001/70160_ATTACTCG-TATAGCCT_S1_L001.R2.fq.gz

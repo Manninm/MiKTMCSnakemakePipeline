@@ -1,0 +1,6 @@
+File extensions are good
+Building DAG of jobs...
+MissingInputException in line 49 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Missing input files for rule PNGRename:
+Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png
+Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png
