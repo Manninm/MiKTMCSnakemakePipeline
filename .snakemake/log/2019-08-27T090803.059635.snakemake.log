@@ -1,0 +1,5 @@
+File extensions are good
+NameError in line 7 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+name 'sample' is not defined
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 118, in <module>
+  File "/home/manninm/pyflow-RNAseq/rules/Picard.smk", line 7, in <module>

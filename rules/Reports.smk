@@ -34,7 +34,8 @@ rule MultiQc:
 		expand("{sample}/{sample}Aligned.sortedByCoord.out.bam",sample=SAMPLES),
 		expand("{sample}/{sample}.R1_fastqc/summary.txt",sample=SAMPLES),
 		expand("{sample}/{sample}.R2_fastqc/summary.txt",sample=SAMPLES),
-		expand("{sample}/{sample}_htseq.cnt",sample=SAMPLES)
+		expand("{sample}/{sample}_htseq.cnt",sample=SAMPLES),
+		expand("{sample}/{sample}_screen.txt",sample=SAMPLES)
 	output:
 		"multiqc_report.html",
 	shell:

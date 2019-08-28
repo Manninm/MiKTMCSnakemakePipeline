@@ -1,0 +1,75 @@
+File extensions are good
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	1	HtSeq_Count
+	1	HtSeq_Matrix
+	2	HtSeq_Move
+	1	MultiQc
+	2	Picard
+	1	PicardGather
+	1	STAR_fq
+	1	StarCollect
+	1	String_Tie
+	1	all
+	22
+
+[Tue Aug 27 09:01:32 2019]
+rule HtSeq_Move:
+    input: Sample_70161/Sample_70161_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+    jobid: 27
+    wildcards: sample=Sample_70161
+
+
+[Tue Aug 27 09:01:32 2019]
+Job 1: aligning Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz using STAR: 20 threads
+
+
+[Tue Aug 27 09:01:32 2019]
+rule Picard:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161picardresults.txt
+    jobid: 6
+    wildcards: sample=Sample_70161
+
+[Tue Aug 27 09:01:33 2019]
+Finished job 27.
+1 of 22 steps (5%) done
+[Tue Aug 27 09:01:33 2019]
+Error in rule Picard:
+    jobid: 6
+    output: Sample_70161/Sample_70161picardresults.txt
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  java -jar /opt/programs/picardtools/2.9/picard.jar CollectRnaSeqMetrics REF_FLAT=/opt/programs/picardtools/refFlat.txt STRAND_SPECIFICITY=FIRST_READ_TRANSCRIPTION_STRAND CHART_OUTPUT=Reports/coverage.pdf INPUT=Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam OUTPUT=Sample_70161/Sample_70161picardresults.txt ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/Picard.smk", line 7, in __rule_Picard
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Terminating processes on user request, this might take some time.
+[Tue Aug 27 09:03:02 2019]
+Error in rule STAR_fq:
+    jobid: 1
+    output: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70160/Sample_70160Log.final.out
+
+RuleException:
+CalledProcessError in line 14 of /home/manninm/pyflow-RNAseq/rules/Star_Map.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  STAR --twopassMode Basic --runThreadN 22         --genomeDir /home/deepSeq/STAR_index_HS_38.86_small/ --outSAMtype BAM SortedByCoordinate         --outBAMcompression 10 --outSAMstrandField intronMotif         --outBAMsortingThreadN 4         --bamRemoveDuplicatesType UniqueIdentical --readFilesCommand gunzip -c --readFilesIn Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz         --outFileNamePrefix Sample_70160/Sample_70160 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Star_Map.smk", line 14, in __rule_STAR_fq
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job STAR_fq since they might be corrupted:
+Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-27T090131.277221.snakemake.log

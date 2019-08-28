@@ -1,0 +1,7 @@
+Sequence file extensions have fastq
+No Group File provided!
+Building DAG of jobs...
+MissingInputException in line 82 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+Plots/HtSeqVoomGt0BoxPlot.png
+Plots/filt_gene_expression_tableBoxPlot.png

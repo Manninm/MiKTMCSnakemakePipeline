@@ -1,0 +1,4 @@
+Sequence file extensions have fastq
+SyntaxError in line 38 of /home/manninm/pyflow-RNAseq/rules/Reports.smk:
+invalid syntax
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 120, in <module>

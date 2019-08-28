@@ -1,0 +1,5 @@
+File extensions are good
+No Group File provided!
+SyntaxError in line 5 of /home/manninm/pyflow-RNAseq/rules/HtSeqPlots.smk:
+EOL while scanning string literal
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 123, in <module>

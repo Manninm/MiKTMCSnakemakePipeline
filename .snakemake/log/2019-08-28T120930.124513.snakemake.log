@@ -1,0 +1,7 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+MissingInputException in line 82 of /home/manninm/pyflow-RNAseq/Snakefile:
+Missing input files for rule all:
+Plots/CountsGt0_voom_filtered.Ward.D2.25.pdf
+Plots/transcript_fpkm.Ward.D2.25pdf

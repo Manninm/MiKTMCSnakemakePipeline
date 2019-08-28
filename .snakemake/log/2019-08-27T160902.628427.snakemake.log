@@ -1,0 +1,71 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	1	all
+	11
+
+[Tue Aug 27 16:09:03 2019]
+rule HtSeqBoxPlot:
+    input: HtSeqCounts/CountsGt0_voom.txt
+    output: Plots/BoxPlotHtSeqVoomGt0.png
+    jobid: 13
+
+
+[Tue Aug 27 16:09:03 2019]
+rule HtSeqCluster:
+    input: HtSeqCounts/CountsGt0_voom_filtered.txt
+    output: Plots/Gt0_voom_filteredWard.D.25, Plots/Gt0_voom_filteredWard.D2.25
+    jobid: 15
+    wildcards: GeneBootStraps=25
+
+
+[Tue Aug 27 16:09:03 2019]
+rule HtSeqPca:
+    input: HtSeqCounts/CountsGt0_voom_filtered.txt
+    output: Plots/PCA1v2&2v3&3v4CountsGt0_voom_filtered
+    jobid: 14
+
+
+[Tue Aug 27 16:09:03 2019]
+rule Ball_Gown:
+    input: Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf, Sample_70166/Sample_70166_onlyKnown.gtf
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+    jobid: 26
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 10 of /home/manninm/pyflow-RNAseq/rules/HtSeqPlots.smk:
+Missing files after 5 seconds:
+Plots/PCA1v2&2v3&3v4CountsGt0_voom_filtered
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+[Tue Aug 27 16:09:10 2019]
+Error in rule HtSeqCluster:
+    jobid: 15
+    output: Plots/Gt0_voom_filteredWard.D.25, Plots/Gt0_voom_filteredWard.D2.25
+
+RuleException:
+CalledProcessError in line 27 of /home/manninm/pyflow-RNAseq/rules/HtSeqPlots.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd HtSeqCounts/; Rscript ../scripts/GeneCluster.R CountsGt0_voom_filtered.txt 25 22 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/HtSeqPlots.smk", line 27, in __rule_HtSeqCluster
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+MissingOutputException in line 1 of /home/manninm/pyflow-RNAseq/rules/HtSeqPlots.smk:
+Missing files after 5 seconds:
+Plots/BoxPlotHtSeqVoomGt0.png
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

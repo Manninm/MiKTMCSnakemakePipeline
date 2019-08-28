@@ -1,0 +1,38 @@
+File extensions are good
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	1	HtSeq_Count
+	1	HtSeq_Matrix
+	1	HtSeq_Move
+	1	MultiQc
+	2	Picard
+	1	PicardGather
+	1	STAR_fq
+	1	StarCollect
+	1	String_Tie
+	1	all
+	21
+
+[Tue Aug 27 09:03:06 2019]
+rule Picard:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161picardresults.txt
+    jobid: 6
+    wildcards: sample=Sample_70161
+
+RuleException in line 1 of /home/manninm/pyflow-RNAseq/rules/Picard.smk:
+NameError: The name 'sample' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

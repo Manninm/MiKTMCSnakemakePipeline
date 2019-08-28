@@ -1,0 +1,56 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneCluster
+	1	BallGownTxCluster
+	1	HtSeqCluster
+	1	all
+	4
+
+[Wed Aug 28 12:12:40 2019]
+rule BallGownTxCluster:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkm.Ward.D2.25.pdf, Plots/transcript_fpkm.Ward.D.25.pdf
+    jobid: 21
+    wildcards: TxBootStraps=25
+
+
+[Wed Aug 28 12:12:40 2019]
+rule BallGownGeneCluster:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_table.Ward.D.25.pdf, Plots/filt_gene_expression_table.Ward.D2.25.pdf
+    jobid: 18
+    wildcards: GeneBootStraps=25
+
+
+[Wed Aug 28 12:12:40 2019]
+rule HtSeqCluster:
+    input: HtSeqCounts/CountsGt0_voom_filtered.txt
+    output: Plots/CountsGt0_voom_filtered.Ward.D.25.pdf, Plots/CountsGt0_voom_filtered.Ward.D2.25.pdf
+    jobid: 15
+    wildcards: GeneBootStraps=25
+
+[Wed Aug 28 12:12:54 2019]
+Finished job 15.
+1 of 4 steps (25%) done
+[Wed Aug 28 12:12:54 2019]
+Finished job 18.
+2 of 4 steps (50%) done
+[Wed Aug 28 12:13:08 2019]
+Finished job 21.
+3 of 4 steps (75%) done
+
+[Wed Aug 28 12:13:08 2019]
+localrule all:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70166/Sample_70166Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam, Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf, Sample_70166/Sample_70166_onlyKnown.gtf, Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt, Sample_70166/Sample_70166picardresults.txt, Plots/CountsGt0_voomBoxPlot.png, Plots/CountsGt0_voom_filteredPCA1v2&2v3&3v4.pdf, Plots/CountsGt0_voom_filtered.Ward.D.25.pdf, Plots/CountsGt0_voom_filtered.Ward.D2.25.pdf, Plots/filt_gene_expression_tableBoxPlot.png, Plots/filt_gene_expression_tablePCA1v2&2v3&3v4.pdf, Plots/filt_gene_expression_table.Ward.D.25.pdf, Plots/filt_gene_expression_table.Ward.D2.25.pdf, Plots/transcript_fpkmBoxPlot.png, Plots/transcript_fpkmPCA1v2&2v3&3v4.pdf, Plots/transcript_fpkm.Ward.D.25.pdf, Plots/transcript_fpkm.Ward.D2.25.pdf, Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt, QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf, Reports/picard_classifications.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt, BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt, multiqc_report.html
+    jobid: 0
+
+[Wed Aug 28 12:13:08 2019]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-28T121240.387091.snakemake.log

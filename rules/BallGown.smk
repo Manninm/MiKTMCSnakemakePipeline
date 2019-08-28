@@ -1,6 +1,6 @@
 if not config["GroupdFile"]:
 	os.system('Rscript scripts/Table.R')
-	print("No Group File provided!")
+	logger.info("No Group File provided!")
 rule Ball_Gown:
 	input:
 		expand("{sample}/{sample}_onlyKnown.gtf",sample=SAMPLES)

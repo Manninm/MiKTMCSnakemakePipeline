@@ -1,0 +1,157 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	3	HtSeq_Count
+	1	HtSeq_Matrix
+	3	HtSeq_Move
+	1	MultiQc
+	1	PNGRename
+	3	Picard
+	1	PicardGather
+	3	STAR_fq
+	1	StarCollect
+	3	String_Tie
+	1	all
+	3	fastqScreen
+	3	fastqc
+	37
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqc:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/summary.txt, Sample_70161/Sample_70161.R2_fastqc/summary.txt
+    jobid: 26
+    wildcards: sample=Sample_70161
+    threads: 2
+
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqc:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R1_fastqc/summary.txt, Sample_70160/Sample_70160.R2_fastqc/summary.txt
+    jobid: 25
+    wildcards: sample=Sample_70160
+    threads: 2
+
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqc:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/summary.txt, Sample_70162/Sample_70162.R2_fastqc/summary.txt
+    jobid: 27
+    wildcards: sample=Sample_70162
+    threads: 2
+
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqScreen:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.fq.gz, Sample_70162/Sample_70162_screen.png, Sample_70162/Sample_70162_screen.txt
+    jobid: 30
+    wildcards: sample=Sample_70162
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqScreen:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png, Sample_70160/Sample_70160_screen.txt
+    jobid: 28
+    wildcards: sample=Sample_70160
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 10:11:32 2019]
+rule fastqScreen:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png, Sample_70161/Sample_70161_screen.txt
+    jobid: 29
+    wildcards: sample=Sample_70161
+    priority: 3
+    threads: 4
+
+Terminating processes on user request, this might take some time.
+[Wed Aug 28 10:11:41 2019]
+Error in rule fastqScreen:
+    jobid: 28
+[Wed Aug 28 10:11:41 2019]
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png, Sample_70160/Sample_70160_screen.txt
+[Wed Aug 28 10:11:41 2019]
+Error in rule fastqScreen:
+
+Error in rule fastqScreen:
+    jobid: 29
+    jobid: 30
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png, Sample_70161/Sample_70161_screen.txt
+    output: Sample_70162/Sample_70162.fq.gz, Sample_70162/Sample_70162_screen.png, Sample_70162/Sample_70162_screen.txt
+
+
+RuleException:
+CalledProcessError in line 50 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cat Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz > Sample_70160/Sample_70160.fq.gz && fastq_screen --quiet --force --threads 4 Sample_70160/Sample_70160.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 50, in __rule_fastqScreen
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job fastqScreen since they might be corrupted:
+Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.txt
+RuleException:
+CalledProcessError in line 50 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cat Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz > Sample_70161/Sample_70161.fq.gz && fastq_screen --quiet --force --threads 4 Sample_70161/Sample_70161.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 50, in __rule_fastqScreen
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 50 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cat Sample_70162/Sample_70162.R1.fq.gz Sample_70162/Sample_70162.R2.fq.gz > Sample_70162/Sample_70162.fq.gz && fastq_screen --quiet --force --threads 4 Sample_70162/Sample_70162.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' died with <Signals.SIGINT: 2>.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 50, in __rule_fastqScreen
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Wed Aug 28 10:11:41 2019]
+Error in rule fastqc:
+    jobid: 25
+[Wed Aug 28 10:11:41 2019]
+[Wed Aug 28 10:11:41 2019]
+    output: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R1_fastqc/summary.txt, Sample_70160/Sample_70160.R2_fastqc/summary.txt
+Error in rule fastqc:
+Error in rule fastqc:
+
+    jobid: 27
+    jobid: 26
+    output: Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/summary.txt, Sample_70162/Sample_70162.R2_fastqc/summary.txt
+    output: Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/summary.txt, Sample_70161/Sample_70161.R2_fastqc/summary.txt
+
+
+RuleException:
+CalledProcessError in line 33 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  fastqc -t 2 --extract Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 130.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 33, in __rule_fastqc
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 33 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  fastqc -t 2 --extract Sample_70162/Sample_70162.R1.fq.gz Sample_70162/Sample_70162.R2.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 130.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 33, in __rule_fastqc
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 33 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  fastqc -t 2 --extract Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 130.
+  File "/home/manninm/pyflow-RNAseq/rules/Fast.smk", line 33, in __rule_fastqc
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job fastqScreen since they might be corrupted:
+Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.txt
+Removing output files of failed job fastqScreen since they might be corrupted:
+Sample_70162/Sample_70162.fq.gz, Sample_70162/Sample_70162_screen.txt
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-28T101131.936225.snakemake.log

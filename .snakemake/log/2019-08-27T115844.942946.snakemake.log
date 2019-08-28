@@ -1,0 +1,367 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 23
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	3	HtSeq_Count
+	1	HtSeq_Matrix
+	3	HtSeq_Move
+	1	MultiQc
+	1	PNGRename
+	3	Picard
+	1	PicardGather
+	3	STAR_fq
+	1	StarCollect
+	3	String_Tie
+	1	all
+	3	fastqScreen
+	3	fastqc
+	37
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqScreen:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.fq.gz, Sample_70162/Sample_70162_screen.png, Sample_70162/Sample_70162_screen.txt
+    jobid: 30
+    wildcards: sample=Sample_70162
+    priority: 3
+    threads: 4
+
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqc:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R1_fastqc/summary.txt, Sample_70160/Sample_70160.R2_fastqc/summary.txt
+    jobid: 25
+    wildcards: sample=Sample_70160
+    threads: 2
+
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqScreen:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png, Sample_70161/Sample_70161_screen.txt
+    jobid: 29
+    wildcards: sample=Sample_70161
+    priority: 3
+    threads: 4
+
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqc:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/summary.txt, Sample_70161/Sample_70161.R2_fastqc/summary.txt
+    jobid: 26
+    wildcards: sample=Sample_70161
+    threads: 2
+
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqc:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/summary.txt, Sample_70162/Sample_70162.R2_fastqc/summary.txt
+    jobid: 27
+    wildcards: sample=Sample_70162
+    threads: 2
+
+
+[Tue Aug 27 11:58:45 2019]
+rule fastqScreen:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png, Sample_70160/Sample_70160_screen.txt
+    jobid: 28
+    wildcards: sample=Sample_70160
+    priority: 3
+    threads: 4
+
+[Tue Aug 27 11:59:46 2019]
+Finished job 25.
+1 of 37 steps (3%) done
+[Tue Aug 27 11:59:48 2019]
+Finished job 26.
+2 of 37 steps (5%) done
+[Tue Aug 27 11:59:50 2019]
+Finished job 27.
+3 of 37 steps (8%) done
+[Tue Aug 27 12:08:54 2019]
+Finished job 30.
+4 of 37 steps (11%) done
+[Tue Aug 27 12:08:54 2019]
+Finished job 29.
+5 of 37 steps (14%) done
+[Tue Aug 27 12:08:54 2019]
+Finished job 28.
+6 of 37 steps (16%) done
+
+[Tue Aug 27 12:08:54 2019]
+Job 2: aligning Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz using STAR: 20 threads
+
+
+[Tue Aug 27 12:08:54 2019]
+rule PNGRename:
+    input: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160_screen.png, Sample_70161/Sample_70161_screen.png, Sample_70162/Sample_70162_screen.png
+    output: QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf
+    jobid: 20
+
+[Tue Aug 27 12:09:24 2019]
+Finished job 20.
+7 of 37 steps (19%) done
+[Tue Aug 27 12:16:18 2019]
+Finished job 2.
+8 of 37 steps (22%) done
+
+[Tue Aug 27 12:16:18 2019]
+Job 3: aligning Sample_70162/Sample_70162.R1.fq.gz Sample_70162/Sample_70162.R2.fq.gz using STAR: 20 threads
+
+
+[Tue Aug 27 12:16:18 2019]
+rule String_Tie:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161_onlyKnown.gtf
+    jobid: 5
+    wildcards: sample=Sample_70161
+
+
+[Tue Aug 27 12:16:18 2019]
+Job 35: htseq-count Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Tue Aug 27 12:16:18 2019]
+rule Picard:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161picardresults.txt
+    jobid: 8
+    wildcards: sample=Sample_70161
+
+[Tue Aug 27 12:17:50 2019]
+Finished job 8.
+9 of 37 steps (24%) done
+[Tue Aug 27 12:18:30 2019]
+Finished job 5.
+10 of 37 steps (27%) done
+[Tue Aug 27 12:24:39 2019]
+Finished job 3.
+11 of 37 steps (30%) done
+
+[Tue Aug 27 12:24:39 2019]
+Job 36: htseq-count Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Tue Aug 27 12:24:39 2019]
+rule String_Tie:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162_onlyKnown.gtf
+    jobid: 6
+    wildcards: sample=Sample_70162
+
+
+[Tue Aug 27 12:24:39 2019]
+rule Picard:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162picardresults.txt
+    jobid: 9
+    wildcards: sample=Sample_70162
+
+[Tue Aug 27 12:25:42 2019]
+Finished job 9.
+12 of 37 steps (32%) done
+
+[Tue Aug 27 12:25:42 2019]
+Job 1: aligning Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz using STAR: 20 threads
+
+[Tue Aug 27 12:25:44 2019]
+Finished job 6.
+13 of 37 steps (35%) done
+[Tue Aug 27 12:32:51 2019]
+Finished job 1.
+14 of 37 steps (38%) done
+
+[Tue Aug 27 12:32:51 2019]
+rule StarCollect:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out
+    output: Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt
+    jobid: 19
+
+
+[Tue Aug 27 12:32:51 2019]
+rule Picard:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160picardresults.txt
+    jobid: 7
+    wildcards: sample=Sample_70160
+
+
+[Tue Aug 27 12:32:51 2019]
+Job 34: htseq-count Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Tue Aug 27 12:32:51 2019]
+rule String_Tie:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+    jobid: 4
+    wildcards: sample=Sample_70160
+
+[Tue Aug 27 12:32:52 2019]
+Finished job 19.
+15 of 37 steps (41%) done
+[Tue Aug 27 12:34:01 2019]
+Finished job 4.
+16 of 37 steps (43%) done
+
+[Tue Aug 27 12:34:01 2019]
+rule Ball_Gown:
+    input: Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+    jobid: 23
+
+[Tue Aug 27 12:34:04 2019]
+Finished job 7.
+17 of 37 steps (46%) done
+
+[Tue Aug 27 12:34:04 2019]
+rule PicardGather:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt
+    output: Reports/picard_classifications.txt
+    jobid: 21
+
+[Tue Aug 27 12:34:05 2019]
+Finished job 21.
+18 of 37 steps (49%) done
+[Tue Aug 27 12:35:07 2019]
+Finished job 35.
+19 of 37 steps (51%) done
+
+[Tue Aug 27 12:35:07 2019]
+rule HtSeq_Move:
+    input: Sample_70161/Sample_70161_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+    jobid: 32
+    wildcards: sample=Sample_70161
+
+[Tue Aug 27 12:35:07 2019]
+Finished job 32.
+20 of 37 steps (54%) done
+[Tue Aug 27 12:36:24 2019]
+Finished job 23.
+21 of 37 steps (57%) done
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownGeneCluster:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_tableWard.D.25, Plots/filt_gene_expression_tableWard.D2.25
+    jobid: 15
+    wildcards: GeneBootStraps=25
+
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownTxBoxPlot:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/BoxPlottranscript_fpkm.png
+    jobid: 16
+
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownTxCluster:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkmWard.D2.25, Plots/transcript_fpkmWard.D.25
+    jobid: 18
+    wildcards: GeneBootStraps=25
+
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownTxPca:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/PCA1v2&2v3&3v4transcript_fpkm
+    jobid: 17
+
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownGenePca:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/PCA1v2&2v3&3v4filt_gene_expression_table
+    jobid: 14
+
+
+[Tue Aug 27 12:36:24 2019]
+rule BallGownGeneBoxPlot:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/BoxPlotfilt_gene_expression_table.png
+    jobid: 13
+
+[Tue Aug 27 12:36:25 2019]
+Error in rule BallGownGenePca:
+    jobid: 14
+    output: Plots/PCA1v2&2v3&3v4filt_gene_expression_table
+
+[Tue Aug 27 12:36:25 2019]
+Error in rule BallGownTxBoxPlot:
+    jobid: 16
+    output: Plots/BoxPlottranscript_fpkm.png
+
+RuleException:
+CalledProcessError in line 16 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/GenePca.R filt_gene_expression_table ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk", line 16, in __rule_BallGownGenePca
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxBoxPlot.R transcript_fpkm.txt ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 7, in __rule_BallGownTxBoxPlot
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Tue Aug 27 12:36:26 2019]
+Error in rule BallGownGeneCluster:
+    jobid: 15
+    output: Plots/filt_gene_expression_tableWard.D.25, Plots/filt_gene_expression_tableWard.D2.25
+
+RuleException:
+CalledProcessError in line 27 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/GeneCluster.R filt_gene_expression_table.txt 25 22 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk", line 27, in __rule_BallGownGeneCluster
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 1 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Missing files after 5 seconds:
+Plots/BoxPlotfilt_gene_expression_table.png
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+[Tue Aug 27 12:36:33 2019]
+Error in rule BallGownTxPca:
+    jobid: 17
+    output: Plots/PCA1v2&2v3&3v4transcript_fpkm
+
+RuleException:
+CalledProcessError in line 16 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxPca.R transcript_fpkm.txt ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 16, in __rule_BallGownTxPca
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Tue Aug 27 12:38:47 2019]
+Finished job 36.
+22 of 37 steps (59%) done
+[Tue Aug 27 12:46:16 2019]
+Finished job 34.
+23 of 37 steps (62%) done
+Terminating processes on user request, this might take some time.
+[Tue Aug 27 13:10:01 2019]
+Error in rule BallGownTxCluster:
+    jobid: 18
+    output: Plots/transcript_fpkmWard.D2.25, Plots/transcript_fpkmWard.D.25
+
+RuleException:
+CalledProcessError in line 27 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxCluster.R transcript_fpkm.txt 25 22 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 27, in __rule_BallGownTxCluster
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-27T115844.942946.snakemake.log

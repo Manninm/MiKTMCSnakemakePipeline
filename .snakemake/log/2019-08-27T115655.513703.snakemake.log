@@ -1,0 +1,4 @@
+File extensions are good
+SyntaxError in line 44 of /home/manninm/pyflow-RNAseq/rules/Fast.smk:
+positional argument follows keyword argument
+  File "/home/manninm/pyflow-RNAseq/Snakefile", line 117, in <module>

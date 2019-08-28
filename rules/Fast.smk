@@ -25,6 +25,8 @@ rule fastqc:
 		"{sample}/{sample}.R2_fastqc/Images/per_sequence_quality.png",
 		"{sample}/{sample}.R1_fastqc/summary.txt",
 		"{sample}/{sample}.R2_fastqc/summary.txt",
+		
+		
 
 	threads: 2
 	shell:
@@ -38,7 +40,8 @@ rule fastqScreen:
 		Fast2="{sample}/{sample}.R2.fq.gz"
 	output:
 		output1="{sample}/{sample}.fq.gz",
-		output2="{sample}/{sample}_screen.png"
+		output2="{sample}/{sample}_screen.png",
+		output3="{sample}/{sample}_screen.txt"
 	params: 
 		outprefix = "{sample}"
 	threads: 4

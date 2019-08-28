@@ -1,0 +1,207 @@
+File extensions are good
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	1	HtSeq_Count
+	1	HtSeq_Matrix
+	1	HtSeq_Move
+	1	MultiQc
+	2	Picard
+	1	PicardGather
+	1	STAR_fq
+	1	StarCollect
+	1	String_Tie
+	1	all
+	21
+
+[Tue Aug 27 09:09:35 2019]
+Job 1: aligning Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz using STAR: 20 threads
+
+
+[Tue Aug 27 09:09:35 2019]
+rule Picard:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161picardresults.txt
+    jobid: 6
+    wildcards: sample=Sample_70161
+
+[Tue Aug 27 09:10:53 2019]
+Finished job 6.
+1 of 21 steps (5%) done
+[Tue Aug 27 09:15:15 2019]
+Finished job 1.
+2 of 21 steps (10%) done
+
+[Tue Aug 27 09:15:15 2019]
+rule String_Tie:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+    jobid: 3
+    wildcards: sample=Sample_70160
+
+
+[Tue Aug 27 09:15:15 2019]
+rule StarCollect:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out
+    output: Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt
+    jobid: 16
+
+
+[Tue Aug 27 09:15:15 2019]
+Job 28: htseq-count Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Tue Aug 27 09:15:15 2019]
+rule Picard:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160picardresults.txt
+    jobid: 5
+    wildcards: sample=Sample_70160
+
+[Tue Aug 27 09:15:15 2019]
+Finished job 16.
+3 of 21 steps (14%) done
+[Tue Aug 27 09:16:11 2019]
+Finished job 5.
+4 of 21 steps (19%) done
+
+[Tue Aug 27 09:16:11 2019]
+rule PicardGather:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt
+    output: Reports/picard_classifications.txt
+    jobid: 18
+
+[Tue Aug 27 09:16:11 2019]
+Finished job 18.
+5 of 21 steps (24%) done
+[Tue Aug 27 09:16:22 2019]
+Finished job 3.
+6 of 21 steps (29%) done
+
+[Tue Aug 27 09:16:22 2019]
+rule Ball_Gown:
+    input: Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+    jobid: 20
+
+[Tue Aug 27 09:18:34 2019]
+Finished job 20.
+7 of 21 steps (33%) done
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownGeneCluster:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_tableWard.D.25, Plots/filt_gene_expression_tableWard.D2.25
+    jobid: 12
+    wildcards: GeneBootStraps=25
+
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownTxCluster:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkmWard.D2.25, Plots/transcript_fpkmWard.D.25
+    jobid: 15
+    wildcards: GeneBootStraps=25
+
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownTxBoxPlot:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/BoxPlottranscript_fpkm.png
+    jobid: 13
+
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownGenePca:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/PCA1v2&2v3&3v4filt_gene_expression_table
+    jobid: 11
+
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownTxPca:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/PCA1v2&2v3&3v4transcript_fpkm
+    jobid: 14
+
+
+[Tue Aug 27 09:18:34 2019]
+rule BallGownGeneBoxPlot:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/BoxPlotfilt_gene_expression_table.png
+    jobid: 10
+
+[Tue Aug 27 09:18:34 2019]
+[Tue Aug 27 09:18:34 2019]
+Error in rule BallGownGenePca:
+Error in rule BallGownTxCluster:
+    jobid: 11
+    jobid: 15
+    output: Plots/PCA1v2&2v3&3v4filt_gene_expression_table
+    output: Plots/transcript_fpkmWard.D2.25, Plots/transcript_fpkmWard.D.25
+
+
+RuleException:
+CalledProcessError in line 16 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/GenePca.R filt_gene_expression_table ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk", line 16, in __rule_BallGownGenePca
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+RuleException:
+CalledProcessError in line 27 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxCluster.R transcript_fpkm.txt 25 22 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 27, in __rule_BallGownTxCluster
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Tue Aug 27 09:18:34 2019]
+Error in rule BallGownTxPca:
+    jobid: 14
+    output: Plots/PCA1v2&2v3&3v4transcript_fpkm
+
+RuleException:
+CalledProcessError in line 16 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxPca.R transcript_fpkm.txt ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 16, in __rule_BallGownTxPca
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Tue Aug 27 09:18:34 2019]
+Error in rule BallGownTxBoxPlot:
+    jobid: 13
+    output: Plots/BoxPlottranscript_fpkm.png
+
+RuleException:
+CalledProcessError in line 7 of /home/manninm/pyflow-RNAseq/rules/BallGownTx.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/TxBoxPlot.R transcript_fpkm.txt ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownTx.smk", line 7, in __rule_BallGownTxBoxPlot
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+[Tue Aug 27 09:18:35 2019]
+Error in rule BallGownGeneCluster:
+    jobid: 12
+    output: Plots/filt_gene_expression_tableWard.D.25, Plots/filt_gene_expression_tableWard.D2.25
+
+RuleException:
+CalledProcessError in line 27 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Command 'set -eo pipefail; echo BEGIN at $(date);  cd BallGown/; Rscript ../scripts/GeneCluster.R filt_gene_expression_table.txt 25 22 ; exitstat=$?; echo END at $(date); echo exit status was $exitstat; exit $exitstat' returned non-zero exit status 1.
+  File "/home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk", line 27, in __rule_BallGownGeneCluster
+  File "/usr/lib64/python3.6/concurrent/futures/thread.py", line 56, in run
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 1 of /home/manninm/pyflow-RNAseq/rules/BallGownGenePlots.smk:
+Missing files after 5 seconds:
+Plots/BoxPlotfilt_gene_expression_table.png
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+[Tue Aug 27 09:28:31 2019]
+Finished job 28.
+8 of 21 steps (38%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/manninm/pyflow-RNAseq/.snakemake/log/2019-08-27T090935.362979.snakemake.log
