@@ -1,0 +1,489 @@
+File extensions are good
+No Group File provided!
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	BallGownGeneBoxPlot
+	1	BallGownGeneCluster
+	1	BallGownGenePca
+	1	BallGownTxBoxPlot
+	1	BallGownTxCluster
+	1	BallGownTxPca
+	1	Ball_Gown
+	1	HtSeqBoxPlot
+	1	HtSeqCluster
+	1	HtSeqPca
+	4	HtSeq_Count
+	1	HtSeq_Matrix
+	4	HtSeq_Move
+	1	MultiQc
+	1	PNGRename
+	4	Picard
+	1	PicardGather
+	4	STAR_fq
+	1	StarCollect
+	4	String_Tie
+	1	all
+	4	fastqScreen
+	4	fastqc
+	44
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqScreen:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.fq.gz, Sample_70160/Sample_70160_screen.png, Sample_70160/Sample_70160_screen.txt
+    jobid: 32
+    wildcards: sample=Sample_70160
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqScreen:
+    input: Sample_70166/Sample_70166.R1.fq.gz, Sample_70166/Sample_70166.R2.fq.gz
+    output: Sample_70166/Sample_70166.fq.gz, Sample_70166/Sample_70166_screen.png, Sample_70166/Sample_70166_screen.txt
+    jobid: 35
+    wildcards: sample=Sample_70166
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqc:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/summary.txt, Sample_70162/Sample_70162.R2_fastqc/summary.txt
+    jobid: 30
+    wildcards: sample=Sample_70162
+    threads: 2
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqc:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/summary.txt, Sample_70161/Sample_70161.R2_fastqc/summary.txt
+    jobid: 29
+    wildcards: sample=Sample_70161
+    threads: 2
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqScreen:
+    input: Sample_70161/Sample_70161.R1.fq.gz, Sample_70161/Sample_70161.R2.fq.gz
+    output: Sample_70161/Sample_70161.fq.gz, Sample_70161/Sample_70161_screen.png, Sample_70161/Sample_70161_screen.txt
+    jobid: 33
+    wildcards: sample=Sample_70161
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqScreen:
+    input: Sample_70162/Sample_70162.R1.fq.gz, Sample_70162/Sample_70162.R2.fq.gz
+    output: Sample_70162/Sample_70162.fq.gz, Sample_70162/Sample_70162_screen.png, Sample_70162/Sample_70162_screen.txt
+    jobid: 34
+    wildcards: sample=Sample_70162
+    priority: 3
+    threads: 4
+
+
+[Wed Aug 28 12:23:02 2019]
+rule fastqc:
+    input: Sample_70166/Sample_70166.R1.fq.gz, Sample_70166/Sample_70166.R2.fq.gz
+    output: Sample_70166/Sample_70166.R1_fastqc/Images/duplication_levels.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/sequence_length_distribution.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_n_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_tile_quality.png, Sample_70166/Sample_70166.R1_fastqc/Images/kmer_profiles.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_quality.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_sequence_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/adapter_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_sequence_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/duplication_levels.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/sequence_length_distribution.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_n_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_tile_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/kmer_profiles.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_sequence_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/adapter_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_sequence_quality.png, Sample_70166/Sample_70166.R1_fastqc/summary.txt, Sample_70166/Sample_70166.R2_fastqc/summary.txt
+    jobid: 31
+    wildcards: sample=Sample_70166
+    threads: 2
+
+[Wed Aug 28 12:24:34 2019]
+Finished job 29.
+1 of 44 steps (2%) done
+[Wed Aug 28 12:24:34 2019]
+Finished job 31.
+2 of 44 steps (5%) done
+[Wed Aug 28 12:24:34 2019]
+Finished job 30.
+3 of 44 steps (7%) done
+
+[Wed Aug 28 12:24:34 2019]
+rule fastqc:
+    input: Sample_70160/Sample_70160.R1.fq.gz, Sample_70160/Sample_70160.R2.fq.gz
+    output: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R1_fastqc/summary.txt, Sample_70160/Sample_70160.R2_fastqc/summary.txt
+    jobid: 28
+    wildcards: sample=Sample_70160
+    threads: 2
+
+[Wed Aug 28 12:25:10 2019]
+Finished job 28.
+4 of 44 steps (9%) done
+[Wed Aug 28 12:33:40 2019]
+Finished job 35.
+5 of 44 steps (11%) done
+[Wed Aug 28 12:33:40 2019]
+Finished job 34.
+6 of 44 steps (14%) done
+[Wed Aug 28 12:33:40 2019]
+Finished job 33.
+7 of 44 steps (16%) done
+[Wed Aug 28 12:33:40 2019]
+Finished job 32.
+8 of 44 steps (18%) done
+
+[Wed Aug 28 12:33:40 2019]
+Job 4: aligning Sample_70166/Sample_70166.R1.fq.gz Sample_70166/Sample_70166.R2.fq.gz using STAR: 20 threads
+
+
+[Wed Aug 28 12:33:40 2019]
+rule PNGRename:
+    input: Sample_70160/Sample_70160.R1_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R1_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R1_fastqc/Images/duplication_levels.png, Sample_70166/Sample_70166.R1_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R1_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R1_fastqc/Images/sequence_length_distribution.png, Sample_70166/Sample_70166.R1_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_n_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_tile_quality.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R1_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R1_fastqc/Images/kmer_profiles.png, Sample_70166/Sample_70166.R1_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_quality.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_base_sequence_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R1_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R1_fastqc/Images/adapter_content.png, Sample_70166/Sample_70166.R1_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R1_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R1_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R1_fastqc/Images/per_sequence_quality.png, Sample_70166/Sample_70166.R1_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/duplication_levels.png, Sample_70161/Sample_70161.R2_fastqc/Images/duplication_levels.png, Sample_70162/Sample_70162.R2_fastqc/Images/duplication_levels.png, Sample_70166/Sample_70166.R2_fastqc/Images/duplication_levels.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_sequence_gc_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/sequence_length_distribution.png, Sample_70161/Sample_70161.R2_fastqc/Images/sequence_length_distribution.png, Sample_70162/Sample_70162.R2_fastqc/Images/sequence_length_distribution.png, Sample_70166/Sample_70166.R2_fastqc/Images/sequence_length_distribution.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_n_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_n_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_n_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_n_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_tile_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_tile_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_tile_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_tile_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/kmer_profiles.png, Sample_70161/Sample_70161.R2_fastqc/Images/kmer_profiles.png, Sample_70162/Sample_70162.R2_fastqc/Images/kmer_profiles.png, Sample_70166/Sample_70166.R2_fastqc/Images/kmer_profiles.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_quality.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_base_sequence_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_base_sequence_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_base_sequence_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_base_sequence_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/adapter_content.png, Sample_70161/Sample_70161.R2_fastqc/Images/adapter_content.png, Sample_70162/Sample_70162.R2_fastqc/Images/adapter_content.png, Sample_70166/Sample_70166.R2_fastqc/Images/adapter_content.png, Sample_70160/Sample_70160.R2_fastqc/Images/per_sequence_quality.png, Sample_70161/Sample_70161.R2_fastqc/Images/per_sequence_quality.png, Sample_70162/Sample_70162.R2_fastqc/Images/per_sequence_quality.png, Sample_70166/Sample_70166.R2_fastqc/Images/per_sequence_quality.png, Sample_70160/Sample_70160_screen.png, Sample_70161/Sample_70161_screen.png, Sample_70162/Sample_70162_screen.png, Sample_70166/Sample_70166_screen.png
+    output: QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf
+    jobid: 23
+
+[Wed Aug 28 12:34:17 2019]
+Finished job 23.
+9 of 44 steps (20%) done
+[Wed Aug 28 12:42:57 2019]
+Finished job 4.
+10 of 44 steps (23%) done
+
+[Wed Aug 28 12:42:57 2019]
+rule String_Tie:
+    input: Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam
+    output: Sample_70166/Sample_70166_onlyKnown.gtf
+    jobid: 8
+    wildcards: sample=Sample_70166
+
+
+[Wed Aug 28 12:42:57 2019]
+rule Picard:
+    input: Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam
+    output: Sample_70166/Sample_70166picardresults.txt
+    jobid: 12
+    wildcards: sample=Sample_70166
+
+
+[Wed Aug 28 12:42:57 2019]
+Job 43: htseq-count Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam : 1 threads
+
+[Wed Aug 28 12:44:22 2019]
+Finished job 8.
+11 of 44 steps (25%) done
+
+[Wed Aug 28 12:44:22 2019]
+Job 2: aligning Sample_70161/Sample_70161.R1.fq.gz Sample_70161/Sample_70161.R2.fq.gz using STAR: 20 threads
+
+[Wed Aug 28 12:44:52 2019]
+Finished job 12.
+12 of 44 steps (27%) done
+[Wed Aug 28 12:52:09 2019]
+Finished job 2.
+13 of 44 steps (30%) done
+
+[Wed Aug 28 12:52:09 2019]
+Job 41: htseq-count Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Wed Aug 28 12:52:09 2019]
+rule Picard:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161picardresults.txt
+    jobid: 10
+    wildcards: sample=Sample_70161
+
+
+[Wed Aug 28 12:52:09 2019]
+rule String_Tie:
+    input: Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam
+    output: Sample_70161/Sample_70161_onlyKnown.gtf
+    jobid: 6
+    wildcards: sample=Sample_70161
+
+[Wed Aug 28 12:53:18 2019]
+Finished job 6.
+14 of 44 steps (32%) done
+[Wed Aug 28 12:53:23 2019]
+Finished job 10.
+15 of 44 steps (34%) done
+
+[Wed Aug 28 12:53:23 2019]
+Job 3: aligning Sample_70162/Sample_70162.R1.fq.gz Sample_70162/Sample_70162.R2.fq.gz using STAR: 20 threads
+
+[Wed Aug 28 13:01:29 2019]
+Finished job 3.
+16 of 44 steps (36%) done
+
+[Wed Aug 28 13:01:29 2019]
+Job 42: htseq-count Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Wed Aug 28 13:01:29 2019]
+rule Picard:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162picardresults.txt
+    jobid: 11
+    wildcards: sample=Sample_70162
+
+
+[Wed Aug 28 13:01:29 2019]
+rule String_Tie:
+    input: Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam
+    output: Sample_70162/Sample_70162_onlyKnown.gtf
+    jobid: 7
+    wildcards: sample=Sample_70162
+
+[Wed Aug 28 13:02:23 2019]
+Finished job 11.
+17 of 44 steps (39%) done
+[Wed Aug 28 13:02:30 2019]
+Finished job 7.
+18 of 44 steps (41%) done
+[Wed Aug 28 13:04:04 2019]
+Finished job 43.
+19 of 44 steps (43%) done
+
+[Wed Aug 28 13:04:04 2019]
+Job 1: aligning Sample_70160/Sample_70160.R1.fq.gz Sample_70160/Sample_70160.R2.fq.gz using STAR: 20 threads
+
+[Wed Aug 28 13:07:58 2019]
+Finished job 41.
+20 of 44 steps (45%) done
+
+[Wed Aug 28 13:07:58 2019]
+rule HtSeq_Move:
+    input: Sample_70166/Sample_70166_htseq.cnt
+    output: HtSeqCounts/Sample_70166_htseq.cnt
+    jobid: 39
+    wildcards: sample=Sample_70166
+
+[Wed Aug 28 13:07:59 2019]
+Finished job 39.
+21 of 44 steps (48%) done
+
+[Wed Aug 28 13:07:59 2019]
+rule HtSeq_Move:
+    input: Sample_70161/Sample_70161_htseq.cnt
+    output: HtSeqCounts/Sample_70161_htseq.cnt
+    jobid: 37
+    wildcards: sample=Sample_70161
+
+Warning: the following output files of rule HtSeq_Move were not present when the DAG was created:
+{'HtSeqCounts/Sample_70161_htseq.cnt'}
+[Wed Aug 28 13:07:59 2019]
+Finished job 37.
+22 of 44 steps (50%) done
+[Wed Aug 28 13:11:12 2019]
+Finished job 1.
+23 of 44 steps (52%) done
+
+[Wed Aug 28 13:11:12 2019]
+rule StarCollect:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70166/Sample_70166Log.final.out
+    output: Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt
+    jobid: 22
+
+
+[Wed Aug 28 13:11:12 2019]
+rule String_Tie:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160_onlyKnown.gtf
+    jobid: 5
+    wildcards: sample=Sample_70160
+
+
+[Wed Aug 28 13:11:12 2019]
+Job 40: htseq-count Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam : 1 threads
+
+
+[Wed Aug 28 13:11:12 2019]
+rule Picard:
+    input: Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam
+    output: Sample_70160/Sample_70160picardresults.txt
+    jobid: 9
+    wildcards: sample=Sample_70160
+
+[Wed Aug 28 13:11:13 2019]
+Finished job 22.
+24 of 44 steps (55%) done
+[Wed Aug 28 13:12:13 2019]
+Finished job 9.
+25 of 44 steps (57%) done
+
+[Wed Aug 28 13:12:13 2019]
+rule PicardGather:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt, Sample_70166/Sample_70166picardresults.txt
+    output: Reports/picard_classifications.txt
+    jobid: 24
+
+[Wed Aug 28 13:12:14 2019]
+Finished job 24.
+26 of 44 steps (59%) done
+[Wed Aug 28 13:12:17 2019]
+Finished job 5.
+27 of 44 steps (61%) done
+
+[Wed Aug 28 13:12:17 2019]
+rule Ball_Gown:
+    input: Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf, Sample_70166/Sample_70166_onlyKnown.gtf
+    output: BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt
+    jobid: 26
+
+[Wed Aug 28 13:14:54 2019]
+Finished job 26.
+28 of 44 steps (64%) done
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownTxPca:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkmPCA1v2&2v3&3v4.pdf
+    jobid: 20
+
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownGenePca:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_tablePCA1v2&2v3&3v4.pdf
+    jobid: 17
+
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownTxCluster:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkm.Ward.D2.25.pdf, Plots/transcript_fpkm.Ward.D.25.pdf
+    jobid: 21
+    wildcards: TxBootStraps=25
+
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownTxBoxPlot:
+    input: BallGown/transcript_fpkm.txt
+    output: Plots/transcript_fpkmBoxPlot.png
+    jobid: 19
+
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownGeneBoxPlot:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_tableBoxPlot.png
+    jobid: 16
+
+
+[Wed Aug 28 13:14:54 2019]
+rule BallGownGeneCluster:
+    input: BallGown/filt_gene_expression_table.txt
+    output: Plots/filt_gene_expression_table.Ward.D.25.pdf, Plots/filt_gene_expression_table.Ward.D2.25.pdf
+    jobid: 18
+    wildcards: GeneBootStraps=25
+
+[Wed Aug 28 13:14:55 2019]
+Finished job 17.
+29 of 44 steps (66%) done
+[Wed Aug 28 13:14:57 2019]
+Finished job 16.
+30 of 44 steps (68%) done
+[Wed Aug 28 13:14:59 2019]
+Finished job 20.
+31 of 44 steps (70%) done
+[Wed Aug 28 13:14:59 2019]
+Finished job 19.
+32 of 44 steps (73%) done
+[Wed Aug 28 13:15:09 2019]
+Finished job 18.
+33 of 44 steps (75%) done
+[Wed Aug 28 13:15:22 2019]
+Finished job 21.
+34 of 44 steps (77%) done
+[Wed Aug 28 13:15:36 2019]
+Finished job 42.
+35 of 44 steps (80%) done
+
+[Wed Aug 28 13:15:36 2019]
+rule HtSeq_Move:
+    input: Sample_70162/Sample_70162_htseq.cnt
+    output: HtSeqCounts/Sample_70162_htseq.cnt
+    jobid: 38
+    wildcards: sample=Sample_70162
+
+Warning: the following output files of rule HtSeq_Move were not present when the DAG was created:
+{'HtSeqCounts/Sample_70162_htseq.cnt'}
+[Wed Aug 28 13:15:36 2019]
+Finished job 38.
+36 of 44 steps (82%) done
+[Wed Aug 28 13:24:40 2019]
+Finished job 40.
+37 of 44 steps (84%) done
+
+[Wed Aug 28 13:24:40 2019]
+rule MultiQc:
+    input: Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt, Sample_70166/Sample_70166picardresults.txt, Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70166/Sample_70166Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam, Sample_70160/Sample_70160.R1_fastqc/summary.txt, Sample_70161/Sample_70161.R1_fastqc/summary.txt, Sample_70162/Sample_70162.R1_fastqc/summary.txt, Sample_70166/Sample_70166.R1_fastqc/summary.txt, Sample_70160/Sample_70160.R2_fastqc/summary.txt, Sample_70161/Sample_70161.R2_fastqc/summary.txt, Sample_70162/Sample_70162.R2_fastqc/summary.txt, Sample_70166/Sample_70166.R2_fastqc/summary.txt, Sample_70160/Sample_70160_htseq.cnt, Sample_70161/Sample_70161_htseq.cnt, Sample_70162/Sample_70162_htseq.cnt, Sample_70166/Sample_70166_htseq.cnt, Sample_70160/Sample_70160_screen.txt, Sample_70161/Sample_70161_screen.txt, Sample_70162/Sample_70162_screen.txt, Sample_70166/Sample_70166_screen.txt
+    output: multiqc_report.html
+    jobid: 27
+
+
+[Wed Aug 28 13:24:40 2019]
+rule HtSeq_Move:
+    input: Sample_70160/Sample_70160_htseq.cnt
+    output: HtSeqCounts/Sample_70160_htseq.cnt
+    jobid: 36
+    wildcards: sample=Sample_70160
+
+Warning: the following output files of rule HtSeq_Move were not present when the DAG was created:
+{'HtSeqCounts/Sample_70160_htseq.cnt'}
+[Wed Aug 28 13:24:41 2019]
+Finished job 36.
+38 of 44 steps (86%) done
+
+[Wed Aug 28 13:24:41 2019]
+rule HtSeq_Matrix:
+    input: HtSeqCounts/Sample_70160_htseq.cnt, HtSeqCounts/Sample_70161_htseq.cnt, HtSeqCounts/Sample_70162_htseq.cnt, HtSeqCounts/Sample_70166_htseq.cnt
+    output: HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt
+    jobid: 25
+
+[Wed Aug 28 13:24:45 2019]
+Finished job 25.
+39 of 44 steps (89%) done
+
+[Wed Aug 28 13:24:45 2019]
+rule HtSeqCluster:
+    input: HtSeqCounts/CountsGt0_voom_filtered.txt
+    output: Plots/CountsGt0_voom_filtered.Ward.D.25.pdf, Plots/CountsGt0_voom_filtered.Ward.D2.25.pdf
+    jobid: 15
+    wildcards: GeneBootStraps=25
+
+
+[Wed Aug 28 13:24:45 2019]
+rule HtSeqPca:
+    input: HtSeqCounts/CountsGt0_voom_filtered.txt
+    output: Plots/CountsGt0_voom_filteredPCA1v2&2v3&3v4.pdf
+    jobid: 14
+
+
+[Wed Aug 28 13:24:45 2019]
+rule HtSeqBoxPlot:
+    input: HtSeqCounts/CountsGt0_voom.txt
+    output: Plots/CountsGt0_voomBoxPlot.png
+    jobid: 13
+
+[Wed Aug 28 13:24:46 2019]
+Finished job 14.
+40 of 44 steps (91%) done
+[Wed Aug 28 13:24:46 2019]
+Finished job 13.
+41 of 44 steps (93%) done
+[Wed Aug 28 13:24:57 2019]
+Finished job 15.
+42 of 44 steps (95%) done
+[Wed Aug 28 13:25:28 2019]
+Finished job 27.
+43 of 44 steps (98%) done
+
+[Wed Aug 28 13:25:28 2019]
+localrule all:
+    input: Sample_70160/Sample_70160Log.final.out, Sample_70161/Sample_70161Log.final.out, Sample_70162/Sample_70162Log.final.out, Sample_70166/Sample_70166Log.final.out, Sample_70160/Sample_70160Aligned.sortedByCoord.out.bam, Sample_70161/Sample_70161Aligned.sortedByCoord.out.bam, Sample_70162/Sample_70162Aligned.sortedByCoord.out.bam, Sample_70166/Sample_70166Aligned.sortedByCoord.out.bam, Sample_70160/Sample_70160_onlyKnown.gtf, Sample_70161/Sample_70161_onlyKnown.gtf, Sample_70162/Sample_70162_onlyKnown.gtf, Sample_70166/Sample_70166_onlyKnown.gtf, Sample_70160/Sample_70160picardresults.txt, Sample_70161/Sample_70161picardresults.txt, Sample_70162/Sample_70162picardresults.txt, Sample_70166/Sample_70166picardresults.txt, Plots/CountsGt0_voomBoxPlot.png, Plots/CountsGt0_voom_filteredPCA1v2&2v3&3v4.pdf, Plots/CountsGt0_voom_filtered.Ward.D.25.pdf, Plots/CountsGt0_voom_filtered.Ward.D2.25.pdf, Plots/filt_gene_expression_tableBoxPlot.png, Plots/filt_gene_expression_tablePCA1v2&2v3&3v4.pdf, Plots/filt_gene_expression_table.Ward.D.25.pdf, Plots/filt_gene_expression_table.Ward.D2.25.pdf, Plots/transcript_fpkmBoxPlot.png, Plots/transcript_fpkmPCA1v2&2v3&3v4.pdf, Plots/transcript_fpkm.Ward.D.25.pdf, Plots/transcript_fpkm.Ward.D2.25.pdf, Reports/averageMappedLength.txt, Reports/input.txt, Reports/mappedPercent.txt, Reports/percentMultimappers.txt, Reports/unmappedTooShort.txt, QcImages/adapter_content_pngs.pdf, QcImages/duplication_levels_pngs.pdf, QcImages/kmer_profiles_pngs.pdf, QcImages/per_base_quality_pngs.pdf, QcImages/per_base_sequence_content_pngs.pdf, QcImages/per_sequence_gc_content_pngs.pdf, Screen/screen_pngs.pdf, Reports/picard_classifications.txt, HtSeqCounts/CountsGt0.txt, HtSeqCounts/allCounts.txt, HtSeqCounts/CountsGt0_voom.txt, HtSeqCounts/CountsGt0_voom_filtered.txt, BallGown/gene_expression_table.txt, BallGown/transcript_fpkm.txt, BallGown/transcript_cov.txt, BallGown/whole_tx_table.txt, BallGown/filt_gene_expression_table.txt, BallGown/filt_transcript_fpkm.txt, BallGown/filt_transcript_cov.txt, BallGown/filt_whole_tx_table.txt, multiqc_report.html
+    jobid: 0
+
+[Wed Aug 28 13:25:28 2019]
+Finished job 0.
+44 of 44 steps (100%) done
+Complete log: /home/manninm/MiKTMCSnakemakePipeline/.snakemake/log/2019-08-28T122301.974680.snakemake.log
