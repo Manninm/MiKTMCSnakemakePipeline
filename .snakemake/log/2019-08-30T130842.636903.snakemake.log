@@ -1,0 +1,8 @@
+File extensions are good
+JSONDecodeError in line 36 of /home/manninm/MiKTMCSnakemakePipeline/Snakefile:
+Expecting ',' delimiter: line 7 column 3 (char 468)
+  File "/home/manninm/MiKTMCSnakemakePipeline/Snakefile", line 36, in <module>
+  File "/usr/lib64/python3.6/json/__init__.py", line 299, in load
+  File "/usr/lib64/python3.6/json/__init__.py", line 354, in loads
+  File "/usr/lib64/python3.6/json/decoder.py", line 339, in decode
+  File "/usr/lib64/python3.6/json/decoder.py", line 355, in raw_decode

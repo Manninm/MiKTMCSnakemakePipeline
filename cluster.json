@@ -1,36 +1,91 @@
 {
     "documenation": {
-        "cmdline": "Use with snakemake --cluster-config cluster.slurm.cheaha.json --cluster 'sbatch --job-name {cluster.job-name} --ntasks {cluster.ntasks} --cpus-per-task {threads} --mem-per-cpu {cluster.mem-per-cpu} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
+        "cmdline": "Use with snakemake -j 999 --cluster-config cluster.json --cluster 'sbatch --job-name {cluster.job-name} --ntasks-per-node {cluster.ntasks-per-node} --cpus-per-task {threads} --mem-per-cpu {cluster.mem-per-cpu} --partition {cluster.partition} --time {cluster.time} --mail-user {cluster.mail-user} --mail-type {cluster.mail-type} --error {cluster.error} --output {cluster.output}'"
     },
-    "__default__" : {
-        "account"        : "kretzler"
-		"job-name"       : "SM.{rule}",
-        "partition"      : "standard",
-		"nodes"          : "1",
-        "time"           : "10:00:00",
-        "ntasks-per-node": 1,
-        "cpus-per-task"  : 1,
-        "mem-per-cpu"    : 4GB,
-        "output"         : "logs/%j.%N.out.txt",
-        "error"          : "logs/%j.%N.err.txt",
-        "mail-user"      : "$USER@umich.edu",
-        "mail-type"      : "ALL"
+    "__default__": {
+        "account": "kretzler",
+        "job-name": "SM.{rule}",
+        "partition": "standard",
+        "nodes": "1",
+        "time": "10:00:00",
+        "ntasks-per-node": "1",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb",
+        "output": "logs/%j.%N.out.txt",
+        "error": "logs/%j.%N.err.txt",
+        "mail-user": "$USER@umich.edu",
+        "mail-type": "ALL"
     },
-
-    "Star_fq" : {
-		"mem-per-cpu" : 1GB
-		"time"        :	00:45:00
+    "HtSeq_Count": {
+        "mem-per-cpu": "4gb",
+        "time": "10:00:00"
     },
-    "fastqScreen" : {
-		"mem-per-cpu" : "16GB",
-        "time"        : "2:00:00"   
+    "fastqScreen": {
+        "mem-per-cpu": "16gb",
+        "time": "2:00:00"
     },
-    "Star" : {
-        "time"        : "10:00:00",
-        "cpus-per-task" 
+    "fastqc": {
+        "mem-per-cpu": "1gb",
+        "time": "00:45:00"
     },
-    "long" : {
-        "time"      : "6-06:00:00",
-        "partition" : "long"
+    "STAR_fq": {
+        "time": "10:00:00",
+        "cpus-per-task": "12",
+        "mem-per-cpu": "14gb"
+    },
+    "StringTie": {
+        "time": "01:00:00",
+        "cpus-per-task": "6",
+        "mem-per-cpu": "16gb"
+    },
+    "Picard": {
+        "time": "01:00:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "8gb"
+    },
+    "HtSeqPca": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGownGenePca": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGownTxPca": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
+    },
+    "HtSeqCluster": {
+        "time": "10:00:00",
+        "cpus-per-task": "12",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGownGeneCluster": {
+        "time": "10:00:00",
+        "cpus-per-task": "12",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGwownTxCluster": {
+        "time": "10:00:00",
+        "cpus-per-task": "12",
+        "mem-per-cpu": "12gb"
+    },
+    "HtSeqBoxPlot": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGownGeneBoxPlot": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
+    },
+    "BallGownTcBoxPlot": {
+        "time": "00:30:00",
+        "cpus-per-task": "1",
+        "mem-per-cpu": "4gb"
     }
 }

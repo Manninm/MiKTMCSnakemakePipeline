@@ -1,0 +1,5 @@
+Directory	Samples	Disease	Batch
+Sample_70160/	Sample_70160	Sample	Batch
+Sample_70161/	Sample_70161	Sample	Batch
+Sample_70162/	Sample_70162	Sample	Batch
+Sample_70166/	Sample_70166	Sample	Batch
